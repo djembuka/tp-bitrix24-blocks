@@ -1,0 +1,17 @@
+.tp-section {
+	display: block;
+	margin: 15px auto;
+	padding: 15px;
+	color: blue;
+}
+
+.tp-section p {
+	font-size: 18px;
+	color: green;
+}
+
+#map {
+	display: block;
+	width: 100%;
+	height: 400pxж
+}

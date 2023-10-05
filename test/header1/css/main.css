@@ -1,0 +1,74 @@
+body {
+  background-color: #eef2f4 !important;
+  padding: 20px;
+}
+
+.twpx-application {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.twpx-button {
+  display: inline-block;
+  height: 39px;
+  line-height: 39px;
+  margin: 0 12px 0 0;
+  background: #ecedef;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #7a818a;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  outline: 0;
+  padding: 0 18px;
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: none;
+  white-space: nowrap;
+  -webkit-box-shadow: 0 0 0 1px #c6cdd3 inset;
+  box-shadow: 0 0 0 1px #c6cdd3 inset;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+.twpx-button:before,
+.twpx-button:after {
+  display: none;
+}
+.twpx-button:hover {
+  background: #cfd4d8;
+  color: #535c69;
+}
+.twpx-button:last-child {
+  margin-right: 0;
+}
+
+.twpx-button--activate {
+  background: transparent;
+  border-color: #c6cdd3;
+  color: #535b69;
+}
+.twpx-button--activate:hover {
+  background: #cfd4d8;
+  border-color: #c6cdd3;
+}
+.twpx-button--activate:active {
+  background: #dde2e5;
+  border-color: #9fa4ab;
+}
+.twpx-button--deactivate {
+  background: #bbed21;
+  border-color: #bbed21;
+  color: #535c69;
+}
+.twpx-button--deactivate:hover {
+  background: #d2f95f;
+  border-color: #d2f95f;
+}
+.twpx-button--deactivate:active {
+  background: #b2e232;
+  border-color: #b2e232;
+}

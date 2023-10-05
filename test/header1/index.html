@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Шапка 1</title>
+
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="twpx-application">
+      <span class="twpx-button--activate twpx-button"> Активировать </span>
+      <span class="twpx-button--deactivate twpx-button"> Отключить </span>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        document
+          .querySelector('.twpx-button--activate')
+          .addEventListener('click', (e) => {
+            BX24.callMethod(
+              'landing.repo.register',
+              {
+                code: 'twpx.header1',
+                fields: {
+                  NAME: 'Шапка 1',
+                  SECTIONS: 'menu',
+                  PREVIEW: 'images/header1.png',
+                  CONTENT: `
+                    <section class="landing-block container-fluid px-0">
+                      Header 1
+                    </section>
+						      `,
+                },
+                manifest: {},
+              },
+              (result) => {
+                if (result && result.answer) {
+                  if (result.answer.error)
+                    console.error('error', result.answer.error);
+                } else console.log('Added');
+                console.info('result', result.data());
+              }
+            );
+          });
+
+        document
+          .querySelector('.twpx-button--deactivate')
+          .addEventListener('click', (e) => {
+            BX24.callMethod(
+              'landing.repo.unregister',
+              {
+                code: 'twinpx.maps',
+              },
+              function (result) {
+                if (result && result.answer) {
+                  if (result.answer.error)
+                    console.error('error', result.answer.error);
+                } else console.log('Removed');
+                console.info('result', result.data());
+              }
+            );
+          });
+      });
+    </script>
+  </body>
+</html>
