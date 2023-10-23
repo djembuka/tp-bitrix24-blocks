@@ -54,7 +54,7 @@
             {
               code: 'twinpx.menu',
               fields: {
-                NAME: 'Шапка Twinpx',
+                NAME: 'Шапка Twinpx test',
                 DESCRIPTION:
                   'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
                 SECTIONS: 'menu',
@@ -144,11 +144,23 @@
                   },
                 },
                 style: {
-                  block: ['block-default'],
+                  block: 'block-default',
                   nodes: {
+                    '.landing-block-node-menu-list': {
+                      name: 'Меню',
+                      type: ['navbar'],
+                    },
+                    '.landing-block-node-menu-list-item': {
+                      name: 'Пункт меню',
+                      type: ['box'],
+                    },
                     '.landing-block-node-menu-list-item-link': {
-                      name: 'Текст',
-                      type: ['border-color', 'typo'],
+                      name: 'Ссылка пункта меню',
+                      type: ['box'],
+                    },
+                    '.landing-block-node-phone-desktop': {
+                      name: 'Телефон',
+                      type: ['typo-link'],
                     },
                   },
                 },
