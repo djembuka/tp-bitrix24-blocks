@@ -11,9 +11,28 @@
 
   sandwich.addEventListener('click', (e) => {
     e.preventDefault();
+
+    const mode = sandwich.classList.contains(
+      'landing-block-node-sandwich--cross'
+    )
+      ? 'open'
+      : 'closed';
+
     sandwich.classList.toggle('landing-block-node-sandwich--cross');
 
-    slidemenu.classList.toggle('landing-block-node-slidemenu--show');
+    if (mode === 'closed') {
+      slidemenu.classList.toggle('landing-block-node-slidemenu--block');
+
+      setTimeout(() => {
+        slidemenu.classList.toggle('landing-block-node-slidemenu--show');
+      }, 100);
+    } else if (mode === 'open') {
+      slidemenu.classList.remove('landing-block-node-slidemenu--show');
+
+      setTimeout(() => {
+        slidemenu.classList.remove('landing-block-node-slidemenu--block');
+      }, 300);
+    }
 
     menu.classList.toggle('opacity-0');
 
@@ -40,15 +59,19 @@
 
   slidemenu.addEventListener('click', (e) => {
     if (e.target.tagName.toLowerCase() === 'a') {
-      closetSlidemenu();
+      closeSlidemenu();
       return true;
     }
   });
 
-  function closetSlidemenu() {
+  function closeSlidemenu() {
     sandwich.classList.remove('landing-block-node-sandwich--cross');
 
     slidemenu.classList.remove('landing-block-node-slidemenu--show');
+
+    setTimeout(() => {
+      slidemenu.classList.remove('landing-block-node-slidemenu--block');
+    }, 1000);
 
     menu.classList.remove('opacity-0');
   }

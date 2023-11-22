@@ -4,7 +4,7 @@
 .twpxHeader1Menu {
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
-  /* height: 29px; */
+  height: 29px;
   overflow: hidden;
 }
 .twpxHeader1Menu .landing-block-node-menu-list-item-link {
@@ -69,10 +69,14 @@
   height: calc(100vh - 100px);
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  display: none !important;
+}
+.twpxHeader1Slidemenu.landing-block-node-slidemenu--block {
+  display: flex !important;
+  z-index: 9999 !important;
 }
 .twpxHeader1Slidemenu.landing-block-node-slidemenu--show {
   opacity: 1 !important;
-  z-index: 9999 !important;
 }
 .twpxHeader1Slidemenu .landing-block-node-slidemenu-list {
   max-height: 90%;
