@@ -32,7 +32,7 @@
           BX24.callMethod(
             'landing.repo.unregister',
             {
-              code: 'twinpx.menu',
+              code: 'twinpx.columns',
             },
             (result) => {
               // if (result.error()) console.error(result.error());
@@ -52,39 +52,37 @@
           BX24.callMethod(
             'landing.repo.register',
             {
-              code: 'twinpx.menu',
+              code: 'twinpx.columns',
               fields: {
-                NAME: 'Шапка Twinpx test',
-                DESCRIPTION:
-                  'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
-                SECTIONS: 'menu',
-                PREVIEW:
-                  'https://b24.twinpx.ru/bitrix24-blocks/header1/header1.png',
+                NAME: 'Колонки Twinpx 4-7',
+                DESCRIPTION: 'Колонки',
+                SECTIONS: 'columns',
+                PREVIEW: '',
                 CONTENT: `
-                  <div class="container-fluid">
-                    <div class="twpxTextBlock">
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <img src="" alt="" class="twpx-text-block-img" />
-                          <p class="twpx-text-block-p">
-                            Сервис проверки электронной цифровой подписи встроенной в PDF
-                            документ.
-                          </p>
-                        </div>
-                        <div class="col-sm-7">
-                          <img src="" alt="" class="twpx-text-block-img" />
-                          <p class="twpx-text-block-p">
-                            Сервис проверки электронной цифровой подписи встроенной в PDF
-                            документ.
-                          </p>
-                        </div>
-                      </div>
+                <div class="landing-block g-pt-30 g-pb-30">
+                  <div class="twpxTextBlock container">
+                    <div class="row">
+                    <div class="col-sm-4">
+                        <img src="" alt="" class="twpx-text-block-img" />
+                        <p class="twpx-text-block-p">
+                        Сервис проверки электронной цифровой подписи встроенной в PDF
+                        документ.
+                        </p>
                     </div>
-                  </div>`,
+                    <div class="col-sm-7">
+                        <img src="" alt="" class="twpx-text-block-img" />
+                        <p class="twpx-text-block-p">
+                        Сервис проверки электронной цифровой подписи встроенной в PDF
+                        документ.
+                        </p>
+                    </div>
+                    </div>
+                  </div>
+                </div>`,
               },
               manifest: {
                 block: {
-                  name: 'Блоки с картинками и текстом 4-7',
+                  name: 'Колонки с картинками и текстом 4-7',
                   section: ['columns'],
                 },
                 nodes: {
