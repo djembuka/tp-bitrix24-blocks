@@ -32,7 +32,7 @@
           BX24.callMethod(
             'landing.repo.unregister',
             {
-              code: 'twinpx.menu',
+              code: 'twinpx.columns',
             },
             (result) => {
               // if (result.error()) console.error(result.error());
@@ -52,28 +52,29 @@
           BX24.callMethod(
             'landing.repo.register',
             {
-              code: 'twinpx.menu',
+              code: 'twinpx.columns',
               fields: {
-                NAME: 'Шапка Twinpx test',
-                DESCRIPTION:
-                  'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
-                SECTIONS: 'menu',
+                NAME: 'Колонки Twinpx 1',
+                DESCRIPTION: 'Картинка и текст в одну колонку',
+                SECTIONS: 'columns',
                 PREVIEW:
-                  'https://b24.twinpx.ru/bitrix24-blocks/header1/header1.png',
+                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
                 CONTENT: `
-                  <div class="container-fluid">
-                    <div class="twpxTextBlock">
-                      <img src="" alt="" class="twpx-text-block-img" />
-                      <p class="twpx-text-block-p">
+                <section class="landing-block g-pt-30 g-pb-30">
+                    <div class="twpxTextBlock container">
+                        <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
+                        <p
+                        class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0"
+                        >
                         Сервис проверки электронной цифровой подписи встроенной в PDF
                         документ.
-                      </p>
+                        </p>
                     </div>
-                  </div>`,
+                </section>`,
               },
               manifest: {
                 block: {
-                  name: 'Блоки с картинками и текстом 4-7',
+                  name: 'Колонки с картинками и текстом',
                   section: ['columns'],
                 },
                 nodes: {
@@ -82,7 +83,7 @@
                     type: 'img',
                   },
                   '.twpx-text-block-p': {
-                    name: 'Логотип',
+                    name: 'Текст',
                     type: 'text',
                   },
                 },

@@ -55,30 +55,33 @@
               code: 'twinpx.columns',
               fields: {
                 NAME: 'Колонки Twinpx 4-7',
-                DESCRIPTION: 'Колонки',
+                DESCRIPTION: 'Колонки с картинками и текстом',
                 SECTIONS: 'columns',
-                PREVIEW: '',
+                PREVIEW:
+                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
                 CONTENT: `
-                <div class="landing-block g-pt-30 g-pb-30">
+                <section class="landing-block g-pt-30 g-pb-30">
                   <div class="twpxTextBlock container">
-                    <div class="row">
-                    <div class="col-sm-4">
-                        <img src="" alt="" class="twpx-text-block-img" />
-                        <p class="twpx-text-block-p">
-                        Сервис проверки электронной цифровой подписи встроенной в PDF
-                        документ.
-                        </p>
-                    </div>
-                    <div class="col-sm-7">
-                        <img src="" alt="" class="twpx-text-block-img" />
-                        <p class="twpx-text-block-p">
-                        Сервис проверки электронной цифровой подписи встроенной в PDF
-                        документ.
-                        </p>
-                    </div>
-                    </div>
+                    <div class="row g-mb-20">
+                        <div class="col-sm-4 g-mt-30">
+                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
+                            <p
+                            class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0"
+                            >
+                                Сервис проверки электронной цифровой подписи встроенной в PDF документ.
+                            </p>
+                        </div>
+                        <div class="col-sm-7 offset-sm-1">
+                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic2.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
+                            <p
+                            class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0"
+                            >
+                                Сервис проверки электронной цифровой подписи встроенной в PDF документ.
+                            </p>
+                        </div>
+                        </div>
                   </div>
-                </div>`,
+                </section>`,
               },
               manifest: {
                 block: {
@@ -91,7 +94,7 @@
                     type: 'img',
                   },
                   '.twpx-text-block-p': {
-                    name: 'Логотип',
+                    name: 'Текст',
                     type: 'text',
                   },
                 },
