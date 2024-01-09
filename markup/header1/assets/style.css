@@ -1,6 +1,9 @@
 .twpxHeader1 {
   z-index: 150 !important;
 }
+.twpxHeader1 .navbar .container {
+  min-height: 100px;
+}
 .twpxHeader1Menu {
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
