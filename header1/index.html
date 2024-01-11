@@ -143,65 +143,15 @@
                   },
                 },
                 style: {
-                  block: 'block-default',
+                  block: 'block-menu',
                   nodes: {
                     '.landing-block-node-menu-list': {
                       name: 'Меню',
                       type: ['navbar'],
-                      additional: {
-                        name: 'Menu',
-                        attrs: [
-                          {
-                            name: 'Поведение меню',
-                            type: 'dropdown',
-                            attribute: 'data-value',
-                            items: {
-                              'u-header--sticky': 'style Фиксируется',
-                              'u-header--static': 'style Прокручивается',
-                            },
-                          },
-                          {
-                            name: 'Test attr field',
-                            type: 'text',
-                            placeholder: 'Type your text',
-                            value: 'default_value',
-                            attribute: 'data-test-text',
-                            textOnly: false,
-                          },
-                          {
-                            name: 'Test attr image field',
-                            type: 'image',
-                            value: {
-                              src: 'http://bitrix24.io/bitrix/images/landing/app-store-badge.svg',
-                              alt: 'test alt',
-                            },
-                            attribute: 'data-test-image',
-                          },
-                          {
-                            name: 'Test attr icon field',
-                            type: 'icon',
-                            value: {
-                              classList: ['fa', 'fa-address-card'],
-                            },
-                            attribute: 'data-test-icon',
-                          },
-                        ],
-                      },
                     },
                     '.landing-block-node-menu-lits-item': {
                       name: 'Пункт меню',
                       type: ['paddings'],
-                      attrs: [
-                        {
-                          name: 'Поведение item',
-                          type: 'dropdown',
-                          attribute: 'data-value',
-                          items: {
-                            'u-header--sticky': 'style Фиксируется',
-                            'u-header--static': 'style Прокручивается',
-                          },
-                        },
-                      ],
                     },
                     '.landing-block-node-menu-list-item-link': {
                       name: 'Ссылка пункта меню',
@@ -210,17 +160,6 @@
                     '.landing-block-node-phone-desktop': {
                       name: 'Телефон',
                       type: ['typo-link'],
-                    },
-                  },
-                },
-                attrs: {
-                  '.landing-block-node-menu-list': {
-                    name: 'Поведение меню data-value',
-                    type: 'dropdown',
-                    attribute: 'data-value',
-                    items: {
-                      'u-header--sticky': 'attrs Фиксируется',
-                      'u-header--static': 'attrs Прокручивается',
                     },
                   },
                 },
