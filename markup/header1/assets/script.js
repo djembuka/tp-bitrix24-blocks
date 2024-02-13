@@ -37,7 +37,7 @@
     menu.classList.toggle('opacity-0');
 
     //copy menu items
-    slidemenuList.innerHTML = '';
+    /*slidemenuList.innerHTML = '';
     menu
       .querySelectorAll('.landing-block-node-menu-list-item-link')
       .forEach((anch) => {
@@ -54,7 +54,14 @@
           'landing-block-node-slidemenu-list-item d-block g-mb-14';
         span.appendChild(newAnch);
         slidemenuList.appendChild(span);
-      });
+      });*/
+  });
+
+  slidemenuList.addEventListener('click', (e) => {
+    if (e.target.tagName.toLowerCase() === 'a') {
+      closeSlidemenu();
+      return true;
+    }
   });
 
   slidemenu.addEventListener('click', (e) => {

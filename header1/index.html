@@ -54,7 +54,7 @@
             {
               code: 'twinpx.menu',
               fields: {
-                NAME: 'Шапка Twinpx block test',
+                NAME: 'Шапка Twinpx',
                 DESCRIPTION:
                   'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
                 SECTIONS: 'menu',
@@ -98,6 +98,15 @@
               <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
                 <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Новости</a>
               </span>
+              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
+                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Работы</a>
+              </span>
+              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
+                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Студия</a>
+              </span>
+              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
+                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Контакты</a>
+              </span>
             </span>
           </div>
         </div>
@@ -135,16 +144,28 @@
                     name: 'Телефон на мобильном',
                     type: 'link',
                   },
+                  '.landing-block-node-slidemenu-list-item-link': {
+                    name: 'Пункт выплывающего меню',
+                    type: 'link',
+                  },
                 },
                 cards: {
                   '.landing-block-node-menu-list-item': {
                     name: 'Пункт меню',
                     label: ['.landing-block-node-menu-list-item-link'],
                   },
+                  '.landing-block-node-slidemenu-list-item': {
+                    name: 'Пункт выплывающего меню',
+                    label: ['.landing-block-node-slidemenu-list-item-link'],
+                  },
                 },
                 style: {
                   block: {
-                    type: ['display', 'header-position'],
+                    type: [
+                      'block-default',
+                      'header-on-scroll',
+                      'header-position',
+                    ],
                   },
                   nodes: {
                     '.landing-block-node-menu-list': {
@@ -161,6 +182,10 @@
                     },
                     '.landing-block-node-phone-desktop': {
                       name: 'Телефон',
+                      type: ['typo-link'],
+                    },
+                    '.landing-block-node-slidemenu-list-item-link': {
+                      name: 'Ссылка пункта выплывающего меню',
                       type: ['typo-link'],
                     },
                   },
