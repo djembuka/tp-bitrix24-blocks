@@ -1,0 +1,11 @@
+.landing-block-node-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.landing-block-node-tags-item {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.landing-block-node-tags-item:hover {
+  opacity: 0.7;
+}
