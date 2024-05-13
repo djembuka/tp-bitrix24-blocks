@@ -21,9 +21,7 @@
   border-style: solid;
   min-height: 44px;
 }
-.landing-block-node-tags-item-label:hover {
-  color: var(--color) !important;
-}
 .landing-block-node-tags-item-link:hover {
+  color: var(--color) !important;
   opacity: 0.7;
 }

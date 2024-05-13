@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Тэги</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="twpx-application">
+      <span class="twpx-button--activate twpx-button"> Активировать </span>
+      <span class="twpx-button--deactivate twpx-button twpx-button--disabled">
+        Отключить
+      </span>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        const activateButton = document.querySelector('.twpx-button--activate');
+        const deactivateButton = document.querySelector(
+          '.twpx-button--deactivate'
+        );
+
+        deactivateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          BX24.callMethod(
+            'landing.repo.unregister',
+            {
+              code: 'twinpx.tags',
+            },
+            (result) => {
+              activateButton.classList.remove('twpx-button--disabled');
+              deactivateButton.classList.add('twpx-button--disabled');
+            }
+          );
+        });
+
+        activateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          activateButton.classList.add('twpx-button--disabled');
+          deactivateButton.classList.remove('twpx-button--disabled');
+
+          BX24.callMethod(
+            'landing.repo.register',
+            {
+              code: 'twinpx.fixedButton',
+              fields: {
+                NAME: 'Кнопка Twinpx',
+                DESCRIPTION:
+                  'Кнопка для отправки запроса, которую всегда видно на экране',
+                SECTIONS: 'tiles',
+                PREVIEW:
+                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
+                CONTENT: `
+                  <a href="" class="twpx-fixed-button landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">Кнопка</a>
+                `,
+              },
+              manifest: {
+                block: {
+                  name: 'Кнопка отправки запроса',
+                  section: ['tiles'],
+                },
+                nodes: {
+                  '.twpx-fixed-button': {
+                    name: 'Кнопка',
+                    type: 'link',
+                  },
+                },
+                style: {
+                  nodes: {
+                    '.twpx-fixed-button': {
+                      name: 'Кнопка отправки запроса',
+                      type: [
+                        'color',
+                        'font-family',
+                        'font-size',
+                        'font-weight',
+                        'background-color',
+                        'border-radius',
+                      ],
+                    },
+                  },
+                },
+                assets: {
+                  css: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/style.css',
+                  ],
+                },
+              },
+            },
+            (result) => {
+              // if (result.error()) console.error(result.error());
+              // else console.log('Added');
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
