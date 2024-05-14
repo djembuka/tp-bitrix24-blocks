@@ -57,9 +57,11 @@
                   'Кнопка для отправки запроса, которую всегда видно на экране',
                 SECTIONS: 'tiles',
                 PREVIEW:
-                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
+                  'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.jpg',
                 CONTENT: `
-                  <a href="" class="twpx-fixed-button landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">Кнопка</a>
+                  <div class="twpx-fixed-button">
+                    <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">Кнопка</a>
+                  </div>
                 `,
               },
               manifest: {
@@ -68,14 +70,15 @@
                   section: ['tiles'],
                 },
                 nodes: {
-                  '.twpx-fixed-button': {
+                  '.landing-block-node': {
                     name: 'Кнопка',
                     type: 'link',
                   },
                 },
                 style: {
+                  block: 'display',
                   nodes: {
-                    '.twpx-fixed-button': {
+                    '.landing-block-node': {
                       name: 'Кнопка отправки запроса',
                       type: [
                         'color',
@@ -85,6 +88,15 @@
                         'background-color',
                         'border-radius',
                       ],
+                      additional: {
+                        attrs: [
+                          {
+                            type: 'text',
+                            name: 'Text field',
+                            attribute: 'data-test-card-attr',
+                          },
+                        ],
+                      },
                     },
                   },
                 },
