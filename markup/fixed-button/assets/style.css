@@ -1,6 +1,6 @@
 .twpx-fixed-button a {
   position: fixed;
-  top: 50%;
+  bottom: 15px;
   left: 15px;
   min-height: 64px;
   width: calc(100% - 15px * 2);
@@ -20,7 +20,70 @@
 
 @media (min-width: 768px) {
   .twpx-fixed-button a {
-    left: 80px;
     width: auto;
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='1'] {
+    top: 80px;
+    bottom: auto;
+    left: 80px;
+    right: auto;
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='2'] {
+    top: 80px;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='3'] {
+    top: 80px;
+    bottom: auto;
+    left: auto;
+    right: 80px;
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='4'] {
+    top: 50%;
+    bottom: auto;
+    left: 80px;
+    right: auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='5'] {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='6'] {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: 80px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='7'] {
+    top: auto;
+    bottom: 80px;
+    left: 80px;
+    right: auto;
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='8'] {
+    top: auto;
+    bottom: 80px;
+    left: auto;
+    right: 80px;
   }
 }

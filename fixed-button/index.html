@@ -76,27 +76,36 @@
                   },
                 },
                 style: {
-                  block: 'display',
-                  nodes: {
-                    '.landing-block-node': {
-                      name: 'Кнопка отправки запроса',
-                      type: [
-                        'color',
-                        'font-family',
-                        'font-size',
-                        'font-weight',
-                        'background-color',
-                        'border-radius',
-                      ],
-                      additional: {
-                        attrs: [
-                          {
-                            type: 'text',
-                            name: 'Text field',
-                            attribute: 'data-test-card-attr',
+                  block: ['display'],
+                  '.landing-block-node': {
+                    name: 'Кнопка отправки запроса',
+                    type: [
+                      'color',
+                      'font-family',
+                      'font-size',
+                      'font-weight',
+                      'background-color',
+                      'border-radius',
+                    ],
+                    additional: {
+                      attrs: [
+                        {
+                          type: 'position',
+                          name: 'Позиционирование',
+                          items: {
+                            'top-left': { content: '', value: '1' },
+                            'top-center': { content: '', value: '2' },
+                            'top-right': { content: '', value: '3' },
+                            'middle-left': { content: '', value: '4' },
+                            'middle-center': { content: '', value: '5' },
+                            'middle-right': { content: '', value: '6' },
+                            'bottom-left': { content: '', value: '7' },
+                            'bottom-right': { content: '', value: '8' },
                           },
-                        ],
-                      },
+                          value: '8',
+                          attribute: 'data-fixed-button-position',
+                        },
+                      ],
                     },
                   },
                 },
