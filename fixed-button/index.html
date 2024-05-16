@@ -59,10 +59,10 @@
                 PREVIEW:
                   'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.jpg',
                 CONTENT: `
-                  <div class="twpx-fixed-button">
-                    <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">Кнопка</a>
-                  </div>
-                `,
+                          <div class="twpx-fixed-button">
+                            <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10" data-fixed-button-position="7">Кнопка</a>
+                          </div>
+                        `,
               },
               manifest: {
                 block: {
@@ -76,7 +76,9 @@
                   },
                 },
                 style: {
-                  block: 'display',
+                  block: {
+                    type: ['display'],
+                  },
                   nodes: {
                     '.landing-block-node': {
                       name: 'Кнопка отправки запроса',
@@ -87,13 +89,26 @@
                         'font-weight',
                         'background-color',
                         'border-radius',
+                        'position',
                       ],
                       additional: {
+                        name: 'Позиционирование',
                         attrs: [
                           {
-                            type: 'text',
-                            name: 'Text field',
-                            attribute: 'data-test-card-attr',
+                            type: 'position',
+                            items: {
+                              'top-left': { content: '', value: '1' },
+                              'top-center': { content: '', value: '2' },
+                              'top-right': { content: '', value: '3' },
+                              'middle-left': { content: '', value: '4' },
+                              'middle-center': { content: '', value: '5' },
+                              'middle-right': { content: '', value: '6' },
+                              'bottom-left': { content: '', value: '7' },
+                              'bottom-center': { content: '', value: '8' },
+                              'bottom-right': { content: '', value: '9' },
+                            },
+                            value: '7',
+                            attribute: 'data-fixed-button-position',
                           },
                         ],
                       },
