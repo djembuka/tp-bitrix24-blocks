@@ -83,6 +83,15 @@
   .twpx-fixed-button a[data-fixed-button-position='8'] {
     top: auto;
     bottom: 80px;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .twpx-fixed-button a[data-fixed-button-position='9'] {
+    top: auto;
+    bottom: 80px;
     left: auto;
     right: 80px;
   }
