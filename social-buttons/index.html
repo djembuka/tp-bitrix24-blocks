@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Иконки соц. сетей</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="twpx-application">
+      <span class="twpx-button--activate twpx-button"> Активировать </span>
+      <span class="twpx-button--deactivate twpx-button twpx-button--disabled">
+        Отключить
+      </span>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        const activateButton = document.querySelector('.twpx-button--activate');
+        const deactivateButton = document.querySelector(
+          '.twpx-button--deactivate'
+        );
+
+        deactivateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          BX24.callMethod(
+            'landing.repo.unregister',
+            {
+              code: 'twinpx.social-buttons',
+            },
+            (result) => {
+              activateButton.classList.remove('twpx-button--disabled');
+              deactivateButton.classList.add('twpx-button--disabled');
+            }
+          );
+        });
+
+        activateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          activateButton.classList.add('twpx-button--disabled');
+          deactivateButton.classList.remove('twpx-button--disabled');
+
+          BX24.callMethod(
+            'landing.repo.register',
+            {
+              code: 'twinpx.social-buttons',
+              fields: {
+                NAME: 'Иконки соц. сетей. Twinpx',
+                DESCRIPTION:
+                  'Иконки для быстрых ссылок на социальные сети компании.',
+                SECTIONS: 'tiles',
+                PREVIEW:
+                  'https://b24.twinpx.ru/bitrix24-blocks/social-buttons/preview.jpg',
+                CONTENT: `
+                <div class="twpxSocialButtons landing-block g-pt-30 g-pb-30">
+                  <div class="landing-block-node-social-buttons">
+                    <div class="container">
+                      <div class="landing-block-node-social-buttons-container">
+                        <span
+                          class="landing-block-node-card landing-block-node-social-buttons-item"
+                        >
+                          <a
+                            href=""
+                            class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-mr-16 g-ml-16 g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
+                          >
+                            <img
+                              src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/telegram.svg"
+                              alt=""
+                              class="twpx-text-block-img g-width-100x g-height-100x g-rounded-7"
+                            />
+                          </a>
+                        </span>
+                        <span
+                          class="landing-block-node-card landing-block-node-social-buttons-item"
+                        >
+                          <a
+                            href=""
+                            class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-mr-16 g-ml-16 g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
+                          >
+                            <img
+                              src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/vk.svg"
+                              alt=""
+                              class="twpx-text-block-img g-width-100x g-height-100x g-rounded-7"
+                            />
+                          </a>
+                        </span>
+                        <span
+                          class="landing-block-node-card landing-block-node-social-buttons-item"
+                        >
+                          <a
+                            href=""
+                            class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-mr-16 g-ml-16 g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
+                          >
+                            <img
+                              src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/ok.svg"
+                              alt=""
+                              class="twpx-text-block-img g-width-100x g-height-100x g-rounded-7"
+                            />
+                          </a>
+                        </span>
+                        <span
+                          class="landing-block-node-card landing-block-node-social-buttons-item"
+                        >
+                          <a
+                            href=""
+                            class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-mr-16 g-ml-16 g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
+                          >
+                            <img
+                              src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/pinterest.svg"
+                              alt=""
+                              class="twpx-text-block-img g-width-100x g-height-100x g-rounded-7"
+                            />
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>`,
+              },
+              manifest: {
+                block: {
+                  name: 'Иконки соц. сетей',
+                  section: ['tiles'],
+                },
+                nodes: {
+                  '.landing-block-node-card-container': {
+                    name: 'Соц. сеть',
+                    type: 'link',
+                  },
+                  '.twpx-text-block-img': {
+                    name: 'Изображение',
+                    type: 'img',
+                  },
+                },
+                cards: {
+                  '.landing-block-node-card': {
+                    name: 'Карточка иконки',
+                    label: ['.landing-block-node-card-container'],
+                  },
+                },
+                style: {
+                  block: 'block-default',
+                  nodes: {
+                    '.landing-block-node-social-buttons-container': {
+                      name: 'Выравнивание',
+                      type: ['text-align'],
+                    },
+                    '.landing-block-node-social-buttons-item-link': {
+                      name: 'Иконка',
+                      type: [
+                        'width',
+                        'height',
+                        'background-color',
+                        'border-color',
+                        'border-width',
+                        'border-radius',
+                      ],
+                    },
+                  },
+                },
+                assets: {
+                  css: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/social-buttons/style.css',
+                  ],
+                },
+              },
+            },
+            (result) => {
+              // if (result.error()) console.error(result.error());
+              // else console.log('Added');
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
