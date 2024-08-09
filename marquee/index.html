@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Бегущая строка</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="twpx-application">
+      <span class="twpx-button--activate twpx-button"> Активировать </span>
+      <span class="twpx-button--deactivate twpx-button twpx-button--disabled">
+        Отключить
+      </span>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        const activateButton = document.querySelector('.twpx-button--activate');
+        const deactivateButton = document.querySelector(
+          '.twpx-button--deactivate'
+        );
+
+        deactivateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          BX24.callMethod(
+            'landing.repo.unregister',
+            {
+              code: 'twinpx.marquee',
+            },
+            (result) => {
+              // if (result.error()) console.error(result.error());
+              // else console.log('Removed');
+              activateButton.classList.remove('twpx-button--disabled');
+              deactivateButton.classList.add('twpx-button--disabled');
+            }
+          );
+        });
+
+        activateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          activateButton.classList.add('twpx-button--disabled');
+          deactivateButton.classList.remove('twpx-button--disabled');
+
+          BX24.callMethod(
+            'landing.repo.register',
+            {
+              code: 'twinpx.marquee',
+              fields: {
+                NAME: 'Бегущая строка',
+                DESCRIPTION: 'Бегущая строка с текстом рекламы или анонса.',
+                SECTIONS: 'Twinpx blocks',
+                PREVIEW:
+                  'https://b24.twinpx.ru/bitrix24-blocks/marquee/preview.jpg',
+                CONTENT: `
+                  <section class="twpxMarquee landing-block g-pt-30 g-pb-30">
+                    <div class="landing-block-node-marquee">
+                      <a
+                        href="/"
+                        class="marquee3k landing-block-node-marquee-link g-bg-gray-light-v5 g-height-80"
+                        data-speed="0.7"
+                      >
+                        <span class="landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans"
+                          >-15% по промокоду SNOW24 на модели без скидок. Бесплатная доставка
+                          в регионы</span
+                        >
+                      </a>
+                    </div>
+                  </section>
+                `,
+              },
+              manifest: {
+                block: {
+                  name: 'Бегущая строка',
+                  section: ['tiles'],
+                },
+                nodes: {
+                  '.landing-block-node-marquee-link': {
+                    name: 'Ссылка',
+                    type: 'link',
+                  },
+                  '.landing-block-node-marquee-text': {
+                    name: 'Текст',
+                    type: 'text',
+                  },
+                },
+                style: {
+                  block: 'block-default',
+                  nodes: {
+                    '.landing-block-node-marquee-link': {
+                      name: 'Фон',
+                      type: ['background-color'],
+                    },
+                    '.twpx-text-block-p': {
+                      name: 'Текст',
+                      type: ['color', 'font-size', 'font-family'],
+                    },
+                  },
+                },
+                assets: {
+                  css: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/marquee/style.css',
+                  ],
+                  js: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/marquee/script.js',
+                  ],
+                },
+              },
+            },
+            (result) => {
+              // if (result.error()) console.error(result.error());
+              // else console.log('Added');
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -5,14 +5,6 @@
   align-items: center;
   padding: 5px 0;
 }
-.diagonal-marquee {
-  transform: rotate(45deg);
-}
-
-.landing-block-node-marquee-link__copy {
-  padding-right: 60px;
-  box-sizing: border-box;
-}
 /* .slr-marquee {
   background-color: #f8f8f8;
   color: #000000;
