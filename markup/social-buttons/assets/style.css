@@ -1,7 +1,14 @@
 .landing-block-node-social-buttons-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -16px;
+  column-gap: 32px;
+  row-gap: 32px;
+}
+@media (max-width: 767px) {
+  .landing-block-node-social-buttons-container {
+    column-gap: 23px;
+    row-gap: 16px;
+  }
 }
 .landing-block-node-social-buttons-container.text-left {
   justify-content: flex-start;
