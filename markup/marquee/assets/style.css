@@ -1,15 +1,19 @@
-.marquee3k {
+.landing-block-node-marquee-link {
   overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
 }
 .diagonal-marquee {
   transform: rotate(45deg);
 }
 
-.marquee3k__copy {
+.landing-block-node-marquee-link__copy {
   padding-right: 60px;
   box-sizing: border-box;
 }
-.slr-marquee {
+/* .slr-marquee {
   background-color: #f8f8f8;
   color: #000000;
   font-size: 1.5rem;
@@ -19,4 +23,4 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-}
+} */
