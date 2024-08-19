@@ -55,7 +55,7 @@
                 NAME: 'Иконки соц. сетей. Twinpx',
                 DESCRIPTION:
                   'Иконки для быстрых ссылок на социальные сети компании.',
-                SECTIONS: 'tiles',
+                SECTIONS: 'Twin px',
                 PREVIEW:
                   'https://b24.twinpx.ru/bitrix24-blocks/social-buttons/preview.jpg',
                 CONTENT: `
@@ -70,6 +70,7 @@
                             href=""
                             class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
                           >
+                            <span class="landing-block-node-card-text">Телеграм</span>
                             <img
                               src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/telegram.svg"
                               alt=""
@@ -84,6 +85,7 @@
                             href=""
                             class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
                           >
+                            <span class="landing-block-node-card-text">Вконтакте</span>
                             <img
                               src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/vk.svg"
                               alt=""
@@ -98,6 +100,7 @@
                             href=""
                             class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
                           >
+                            <span class="landing-block-node-card-text">Одноклассники</span>
                             <img
                               src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/ok.svg"
                               alt=""
@@ -112,6 +115,7 @@
                             href=""
                             class="g-button-color g-width-64 g-height-64 g-rounded-7 g-bg-black g-flex-centered g-text-underline--none--hover landing-block-node-social-buttons-item-link landing-block-node-card-container"
                           >
+                            <span class="landing-block-node-card-text">Pinterest</span>
                             <img
                               src="https://b24.twinpx.ru/bitrix24-blocks/social-buttons/pinterest.svg"
                               alt=""
@@ -130,6 +134,10 @@
                   section: ['tiles'],
                 },
                 nodes: {
+                  '.landing-block-node-card-text': {
+                    name: 'Название',
+                    type: 'text',
+                  },
                   '.landing-block-node-card-container': {
                     name: 'Соц. сеть',
                     type: 'link',
@@ -142,7 +150,7 @@
                 cards: {
                   '.landing-block-node-card': {
                     name: 'Карточка иконки',
-                    label: ['.landing-block-node-card-container'],
+                    label: ['.landing-block-node-card-text'],
                   },
                 },
                 style: {
@@ -151,19 +159,89 @@
                     '.landing-block-node-social-buttons-container': {
                       name: 'Выравнивание',
                       type: ['text-align'],
+                      additional: {
+                        name: 'Расстояние между иконками',
+                        attrs: [
+                          {
+                            name: 'Расстояние',
+                            type: 'slider',
+                            attribute: 'data-gap',
+                            items: [
+                              {
+                                name: '8',
+                                value: '8',
+                              },
+                              {
+                                name: '12',
+                                value: '12',
+                              },
+                              {
+                                name: '16',
+                                value: '16',
+                              },
+                              {
+                                name: '20',
+                                value: '20',
+                              },
+                              {
+                                name: '24',
+                                value: '24',
+                              },
+                              {
+                                name: '28',
+                                value: '28',
+                              },
+                              {
+                                name: '32',
+                                value: '32',
+                              },
+                            ],
+                            value: '32',
+                          },
+                        ],
+                      },
                     },
                     '.landing-block-node-social-buttons-item-link': {
                       name: 'Иконка',
                       type: [
-                        'width',
-                        'height',
                         'background-color',
                         'border-color',
                         'border-width',
                         'border-radius',
-                        'column-gap',
-                        'row-gap',
                       ],
+                      additional: {
+                        name: 'Размер иконки',
+                        attrs: [
+                          {
+                            name: 'Ширина и высота',
+                            type: 'slider',
+                            attribute: 'data-size',
+                            items: [
+                              {
+                                name: '16',
+                                value: '16',
+                              },
+                              {
+                                name: '24',
+                                value: '24',
+                              },
+                              {
+                                name: '32',
+                                value: '32',
+                              },
+                              {
+                                name: '48',
+                                value: '48',
+                              },
+                              {
+                                name: '64',
+                                value: '64',
+                              },
+                            ],
+                            value: '64',
+                          },
+                        ],
+                      },
                     },
                   },
                 },
