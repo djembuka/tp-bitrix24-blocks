@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Consent popup</title>
+
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="twpx-application">
+      <span class="twpx-button--activate twpx-button"> Активировать </span>
+      <span class="twpx-button--deactivate twpx-button twpx-button--disabled">
+        Отключить
+      </span>
+    </div>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        const activateButton = document.querySelector('.twpx-button--activate');
+        const deactivateButton = document.querySelector(
+          '.twpx-button--deactivate'
+        );
+
+        deactivateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          BX24.callMethod(
+            'landing.repo.unregister',
+            {
+              code: 'twinpx.consent-popup',
+            },
+            (result) => {
+              activateButton.classList.remove('twpx-button--disabled');
+              deactivateButton.classList.add('twpx-button--disabled');
+            }
+          );
+        });
+
+        activateButton.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          activateButton.classList.add('twpx-button--disabled');
+          deactivateButton.classList.remove('twpx-button--disabled');
+
+          BX24.callMethod(
+            'landing.repo.register',
+            {
+              code: 'twinpx.consentPopup',
+              fields: {
+                NAME: 'Пользовательское соглашение без картинки Twinpx',
+                DESCRIPTION: 'Пользовательское соглашение без картинки',
+                SECTIONS: 'Twinpx blocks',
+                PREVIEW:
+                  'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/preview.jpg',
+                CONTENT: `
+    <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
+      <div class="landing-block-node-consent-popup-text-block g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
+        <span class="landing-block-node-consent-popup-text">На сайте СРО ААС используются файлы cookie. Оставаясь на sroaas.ru, вы принимаете</span> <a href="" class="landing-block-node-consent-popup-link">пользовательское соглашение</a>.
+      </div>
+      <a href="" class="landing-block-node-consent-popup-button g-bg-white g-color-black g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">
+        Любой текст
+      </a>
+    </div>
+                        `,
+              },
+              manifest: {
+                block: {
+                  name: 'Пользовательское соглашение без картинки',
+                  section: ['tiles'],
+                },
+                nodes: {
+                  '.landing-block-node-consent-popup-text': {
+                    name: 'Текст',
+                    type: 'text',
+                  },
+                  '.landing-block-node-consent-popup-link': {
+                    name: 'Ссылка',
+                    type: 'link',
+                  },
+                  '.landing-block-node-consent-popup-button': {
+                    name: 'Кнопка закрытия окна',
+                    type: 'text',
+                  },
+                },
+                style: {
+                  block: {
+                    type: ['block-default', 'border-radius'],
+                    additional: {
+                      name: 'Настройки блока',
+                      attrs: [
+                        {
+                          name: 'Ширина блока',
+                          type: 'slider',
+                          attribute: 'data-width',
+                          items: [
+                            {
+                              name: '25%',
+                              value: '25',
+                            },
+                            {
+                              name: '33%',
+                              value: '33',
+                            },
+                            {
+                              name: '50%',
+                              value: '50',
+                            },
+                            {
+                              name: '75%',
+                              value: '75',
+                            },
+                            {
+                              name: '100%',
+                              value: '100',
+                            },
+                          ],
+                          value: '50',
+                        },
+                        {
+                          name: 'Положение блока',
+                          type: 'dropdown',
+                          attribute: 'data-align',
+                          items: {
+                            left: 'Слева',
+                            center: 'По центру',
+                            right: 'Справа',
+                          },
+                        },
+                        {
+                          name: 'Положение кнопки и текста внутри блока',
+                          type: 'dropdown',
+                          attribute: 'data-direction',
+                          items: {
+                            row: 'Текст слева, кнопка справа',
+                            'row-reverse': 'Текст справа, кнопка слева',
+                            column: 'Текст сверху, кнопка снизу',
+                            'column-reverse': 'Текст снизу, кнопка сверху',
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  nodes: {
+                    '.landing-block-node-consent-popup-text-block': {
+                      name: 'Текст',
+                      type: 'typo-simple',
+                    },
+                    '.landing-block-node-consent-popup-link': {
+                      name: 'Ссылка',
+                      type: 'typo-link',
+                    },
+                    '.landing-block-node-consent-popup-button': {
+                      name: 'Кнопка закрытия окна',
+                      type: [
+                        'color',
+                        'font-family',
+                        'font-size',
+                        'font-weight',
+                        'background-color',
+                        'border-radius',
+                      ],
+                    },
+                  },
+                },
+                assets: {
+                  css: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/style.css',
+                  ],
+                  js: [
+                    'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/script.js',
+                  ],
+                },
+              },
+            },
+            (result) => {
+              // if (result.error()) console.error(result.error());
+              // else console.log('Added');
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
