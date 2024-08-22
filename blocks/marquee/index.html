@@ -65,7 +65,6 @@
                       <a
                         href="/"
                         class="marquee3k landing-block-node-marquee-link g-bg-gray-light-v5 g-height-80"
-                        data-speed="0.7"
                       >
                         <span class="landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans"
                           >-15% по промокоду SNOW24 на модели без скидок. Бесплатная доставка
@@ -92,15 +91,87 @@
                   },
                 },
                 style: {
-                  block: 'block-default',
+                  block: {
+                    type: ['block-default'],
+                  },
                   nodes: {
                     '.landing-block-node-marquee-link': {
                       name: 'Фон',
                       type: ['background-color'],
+                      additional: {
+                        name: 'Настройки',
+                        attrs: [
+                          {
+                            name: 'Скорость движения',
+                            type: 'slider',
+                            attribute: 'data-speed',
+                            items: [
+                              {
+                                name: '1',
+                                value: '0.1',
+                              },
+                              {
+                                name: '2',
+                                value: '0.2',
+                              },
+                              {
+                                name: '3',
+                                value: '0.3',
+                              },
+                              {
+                                name: '4',
+                                value: '0.4',
+                              },
+                              {
+                                name: '5',
+                                value: '0.5',
+                              },
+                              {
+                                name: '6',
+                                value: '0.6',
+                              },
+                              {
+                                name: '7',
+                                value: '0.7',
+                              },
+                              {
+                                name: '8',
+                                value: '0.8',
+                              },
+                              {
+                                name: '9',
+                                value: '0.9',
+                              },
+                              {
+                                name: '10',
+                                value: '1',
+                              },
+                              {
+                                name: '20',
+                                value: '2',
+                              },
+                              {
+                                name: '30',
+                                value: '3',
+                              },
+                            ],
+                            value: '0.3',
+                          },
+                          {
+                            name: 'Направление движения',
+                            type: 'dropdown',
+                            attribute: 'data-reverse',
+                            items: {
+                              1: 'Слева направо',
+                              2: 'Справа налево',
+                            },
+                          },
+                        ],
+                      },
                     },
-                    '.twpx-text-block-p': {
+                    '.landing-block-node-marquee-text': {
                       name: 'Текст',
-                      type: ['color', 'font-size', 'font-family'],
+                      type: ['typo'],
                     },
                   },
                 },
