@@ -31,24 +31,14 @@
           e.preventDefault();
           BX24.callMethod(
             'landing.repo.unregister',
-            { code: 'twinpx.header1' },
+            {
+              code: 'twinpx.marquee',
+            },
             (result) => {
               activateButton.classList.remove('twpx-button--disabled');
               deactivateButton.classList.add('twpx-button--disabled');
             }
           );
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.marquee',
-          });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.textblock74',
-          });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.textblock47',
-          });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.textblock1',
-          });
           BX24.callMethod('landing.repo.unregister', { code: 'twinpx.tags' });
           BX24.callMethod('landing.repo.unregister', {
             code: 'twinpx.socialbuttons',
@@ -67,155 +57,6 @@
           activateButton.classList.add('twpx-button--disabled');
           deactivateButton.classList.remove('twpx-button--disabled');
 
-          //header1
-          BX24.callMethod('landing.repo.register', {
-            code: 'twinpx.header1',
-            fields: {
-              NAME: 'Шапка Twinpx',
-              DESCRIPTION:
-                'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
-              SECTIONS: 'cover',
-              PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/header1/preview.png',
-              CONTENT: `
-                      <header class="twpxHeader1 landing-block g-bg-white u-header">
-        <nav class="navbar navbar-expand-lg g-pa-0">
-          <div class="container g-height-100">
-            <a href="" class="navbar-brand landing-block-node-menu-logo-link u-header__logo">
-              <img src="https://b24.twinpx.ru/bitrix24-blocks/header1/twinpx-logo.svg" alt="" class="landing-block-node-menu-logo" />
-            </a>
-            <div class="d-flex justify-content-end align-items-center">
-              <div class="twpxHeader1Menu landing-block-node-menu-list d-flex flex-wrap justify-content-end align-items-center">
-                <div class="landing-block-node-menu-list-item g-pr-30 g-pl-30">
-                  <a href="" class="landing-block-node-menu-list-item-link g-color-black g-font-size-18 g-font-weight-600 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover"> Новости </a>
-                </div>
-                <div class="landing-block-node-menu-list-item g-pr-30 g-pl-30">
-                  <a href="" class="landing-block-node-menu-list-item-link g-color-black g-font-size-18 g-font-weight-600 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover">Работы</a>
-                </div>
-                <div class="landing-block-node-menu-list-item g-pr-30 g-pl-30">
-                  <a href="" class="landing-block-node-menu-list-item-link g-color-black g-font-size-18 g-font-weight-600 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover">Студия</a>
-                </div>
-                <div class="landing-block-node-menu-list-item g-pr-30 g-pl-30">
-                  <a href="" class="landing-block-node-menu-list-item-link g-color-black g-font-size-18 g-font-weight-600 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover">Контакты</a>
-                </div>
-              </div>
-              <div class="landing-block-node-phone g-pr-30 g-pl-30">
-                <a href="tel:+78888888888" class="landing-block-node-phone-desktop g-color-black g-font-size-18 g-font-weight-600 g-font-open-sans g-nowrap g-text-decoration-none g-text-decoration-none--hover">+7 888 888-88-88</a>
-                <a href="tel:+78888888888" class="landing-block-node-phone-mobile g-pl-30" >
-                  <img src="https://b24.twinpx.ru/bitrix24-blocks/header1/phone.svg" width="20" height="20" alt="">
-                </a>
-              </div>
-              <div class="twpxHeader1Sandwich landing-block-node-sandwich"></div>
-            </div>
-          </div>
-        </nav>
-        <div class="g-pos-rel">
-          <div class="twpxHeader1Slidemenu landing-block-node-slidemenu g-bg-white g-pos-abs g-top-0 g-left-0 g-width-100x d-flex justify-content-center align-items-center opacity-0 g-z-index-minus-1">
-            <span class="landing-block-node-slidemenu-list g-px-10">
-              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
-                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Новости</a>
-              </span>
-              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
-                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Работы</a>
-              </span>
-              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
-                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Студия</a>
-              </span>
-              <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
-                <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Контакты</a>
-              </span>
-            </span>
-          </div>
-        </div>
-      </header>
-                      `,
-            },
-            manifest: {
-              block: {
-                name: 'Шапка сайта с логотипом и меню',
-                section: ['cover'],
-              },
-              nodes: {
-                '.landing-block-node-menu-logo-link': {
-                  name: 'Ссылка на логотипе',
-                  type: 'link',
-                  skipContent: true,
-                },
-                '.landing-block-node-menu-logo': {
-                  name: 'Логотип',
-                  type: 'img',
-                  dimensions: {
-                    maxWidth: 200,
-                    maxHeight: 30,
-                  },
-                },
-                '.landing-block-node-menu-list-item-link': {
-                  name: 'Пункт меню',
-                  type: 'link',
-                },
-                '.landing-block-node-phone-desktop': {
-                  name: 'Телефон десктоп',
-                  type: 'link',
-                },
-                '.landing-block-node-phone-mobile': {
-                  name: 'Телефон на мобильном',
-                  type: 'link',
-                },
-                '.landing-block-node-slidemenu-list-item-link': {
-                  name: 'Пункт выплывающего меню',
-                  type: 'link',
-                },
-              },
-              cards: {
-                '.landing-block-node-menu-list-item': {
-                  name: 'Пункт меню',
-                  label: ['.landing-block-node-menu-list-item-link'],
-                },
-                '.landing-block-node-slidemenu-list-item': {
-                  name: 'Пункт выплывающего меню',
-                  label: ['.landing-block-node-slidemenu-list-item-link'],
-                },
-              },
-              style: {
-                block: {
-                  type: [
-                    'block-default',
-                    'header-on-scroll',
-                    'header-position',
-                  ],
-                },
-                nodes: {
-                  '.landing-block-node-menu-list': {
-                    name: 'Меню',
-                    type: ['navbar'],
-                  },
-                  '.landing-block-node-menu-lits-item': {
-                    name: 'Пункт меню',
-                    type: ['paddings'],
-                  },
-                  '.landing-block-node-menu-list-item-link': {
-                    name: 'Ссылка пункта меню',
-                    type: ['typo-link'],
-                  },
-                  '.landing-block-node-phone-desktop': {
-                    name: 'Телефон',
-                    type: ['typo-link'],
-                  },
-                  '.landing-block-node-slidemenu-list-item-link': {
-                    name: 'Ссылка пункта выплывающего меню',
-                    type: ['typo-link'],
-                  },
-                },
-              },
-              assets: {
-                css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/header1/style.css',
-                ],
-                js: ['https://b24.twinpx.ru/bitrix24-blocks/header1/script.js'],
-              },
-            },
-          });
-
           //marquee
           BX24.callMethod('landing.repo.register', {
             code: 'twinpx.marquee',
@@ -224,7 +65,7 @@
               DESCRIPTION: 'Бегущая строка с текстом рекламы или анонса.',
               SECTIONS: 'news',
               PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/marquee/preview.jpg',
+                'https://b24.twinpx.ru/bitrix24-blocks/marquee/preview.png',
               CONTENT: `
                   <section class="twpxMarquee landing-block g-pt-30 g-pb-30">
                     <div class="landing-block-node-marquee">
@@ -346,182 +187,6 @@
             },
           });
 
-          //text-block-7-4
-          BX24.callMethod('landing.repo.register', {
-            code: 'twinpx.textblock74',
-            fields: {
-              NAME: 'Колонки Twinpx 7-4',
-              DESCRIPTION: 'Колонки с картинками и текстом',
-              SECTIONS: 'columns',
-              PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
-              CONTENT: `
-                <section class="landing-block g-pt-30 g-pb-30">
-                    <div class="twpxTextBlock container">
-                      <div class="row g-mb-20">
-                        <div class="col-sm-7">
-                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x"/>
-                            <p class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0">
-                            Сервис проверки электронной цифровой подписи встроенной в PDF
-                            документ.
-                            </p>
-                        </div>
-                        <div class="col-sm-4 offset-sm-1 g-mt-30">
-                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic2.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x"/>
-                            <p class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0">
-                            Сервис проверки электронной цифровой подписи встроенной в PDF
-                            документ.
-                            </p>
-                        </div>
-                      </div>
-                    </div>
-                </section>`,
-            },
-            manifest: {
-              block: {
-                name: 'Блоки с картинками и текстом 7-4',
-                section: ['columns'],
-              },
-              nodes: {
-                '.twpx-text-block-img': {
-                  name: 'Изображение',
-                  type: 'img',
-                },
-                '.twpx-text-block-p': {
-                  name: 'Текст',
-                  type: 'text',
-                },
-              },
-              style: {
-                block: 'block-default',
-                nodes: {
-                  '.twpx-text-block-p': {
-                    name: 'Текст',
-                    type: ['typo'],
-                  },
-                },
-              },
-              assets: {
-                css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/style.css',
-                ],
-              },
-            },
-          });
-
-          //text-block-4-7
-          BX24.callMethod('landing.repo.register', {
-            code: 'twinpx.textblock47',
-            fields: {
-              NAME: 'Колонки Twinpx 4-7',
-              DESCRIPTION: 'Колонки с картинками и текстом',
-              SECTIONS: 'Twinpx blocks',
-              PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
-              CONTENT: `
-                <section class="landing-block g-pt-30 g-pb-30">
-                  <div class="twpxTextBlock container">
-                    <div class="row g-mb-20">
-                        <div class="col-sm-4 g-mt-30">
-                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
-                            <p class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0">
-                                Сервис проверки электронной цифровой подписи встроенной в PDF документ.
-                            </p>
-                        </div>
-                        <div class="col-sm-7 offset-sm-1">
-                            <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic2.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
-                            <p class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0">
-                                Сервис проверки электронной цифровой подписи встроенной в PDF документ.
-                            </p>
-                        </div>
-                    </div>
-                  </div>
-                </section>`,
-            },
-            manifest: {
-              block: {
-                name: 'Колонки с картинками и текстом 4-7',
-                section: ['columns'],
-              },
-              nodes: {
-                '.twpx-text-block-img': {
-                  name: 'Изображение',
-                  type: 'img',
-                },
-                '.twpx-text-block-p': {
-                  name: 'Текст',
-                  type: 'text',
-                },
-              },
-              style: {
-                block: 'block-default',
-                nodes: {
-                  '.twpx-text-block-p': {
-                    name: 'Текст',
-                    type: ['typo'],
-                  },
-                },
-              },
-              assets: {
-                css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/style.css',
-                ],
-              },
-            },
-          });
-
-          //text-block-1
-          BX24.callMethod('landing.repo.register', {
-            code: 'twinpx.textblock1',
-            fields: {
-              NAME: 'Колонки Twinpx 1',
-              DESCRIPTION: 'Картинка и текст в одну колонку',
-              SECTIONS: 'Twinpx blocks',
-              PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/preview.jpg',
-              CONTENT: `
-                <section class="landing-block g-pt-30 g-pb-30">
-                    <div class="twpxTextBlock container">
-                        <img src="https://b24.twinpx.ru/bitrix24-blocks/text-blocks/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
-                        <p class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0">
-                        Сервис проверки электронной цифровой подписи встроенной в PDF
-                        документ.
-                        </p>
-                    </div>
-                </section>`,
-            },
-            manifest: {
-              block: {
-                name: 'Колонки с картинками и текстом',
-                section: ['columns'],
-              },
-              nodes: {
-                '.twpx-text-block-img': {
-                  name: 'Изображение',
-                  type: 'img',
-                },
-                '.twpx-text-block-p': {
-                  name: 'Текст',
-                  type: 'text',
-                },
-              },
-              style: {
-                block: 'block-default',
-                nodes: {
-                  '.twpx-text-block-p': {
-                    name: 'Текст',
-                    type: ['typo'],
-                  },
-                },
-              },
-              assets: {
-                css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/text-blocks/style.css',
-                ],
-              },
-            },
-          });
-
           //tags
           BX24.callMethod('landing.repo.register', {
             code: 'twinpx.tags',
@@ -529,7 +194,7 @@
               NAME: 'Тэги',
               DESCRIPTION: 'Ссылки в виде тэгов',
               SECTIONS: 'tiles',
-              PREVIEW: 'https://b24.twinpx.ru/bitrix24-blocks/tags/preview.jpg',
+              PREVIEW: 'https://b24.twinpx.ru/bitrix24-blocks/tags/preview.png',
               CONTENT: `
                 <div class="twpxTags landing-block g-pt-30 g-pb-30">
                     <div class="landing-block-node-tags">
@@ -599,7 +264,7 @@
               DESCRIPTION: 'Иконки для быстрых ссылок на социальные сети.',
               SECTIONS: 'Twin px',
               PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/social-buttons/preview.jpg',
+                'https://b24.twinpx.ru/bitrix24-blocks/social-buttons/preview.png',
               CONTENT: `
                 <div class="twpxSocialButtons landing-block g-pt-30 g-pb-30">
                   <div class="landing-block-node-social-buttons">
@@ -768,7 +433,7 @@
                 'Кнопка для отправки запроса, которую всегда видно на экране',
               SECTIONS: 'tiles',
               PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.jpg',
+                'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.png',
               CONTENT: `
                           <div class="twpx-fixed-button">
                             <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10" data-fixed-button-position="7">Кнопка</a>
@@ -842,7 +507,7 @@
               DESCRIPTION: 'Пользовательское соглашение без картинки',
               SECTIONS: 'tiles',
               PREVIEW:
-                'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/preview.jpg',
+                'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/preview.png',
               CONTENT: `
     <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
       <div class="landing-block-node-consent-popup-text-block g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
