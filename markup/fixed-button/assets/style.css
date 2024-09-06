@@ -20,6 +20,18 @@
   opacity: 0.7;
 }
 
+[id^='block'] .twpx-fixed-button {
+  display: block;
+}
+[id^='block'] .twpx-fixed-button a {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  display: inline-flex;
+}
+
 @media (min-width: 768px) {
   .twpx-fixed-button a {
     width: auto;

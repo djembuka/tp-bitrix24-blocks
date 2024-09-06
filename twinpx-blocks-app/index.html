@@ -435,7 +435,7 @@
               PREVIEW:
                 'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.png',
               CONTENT: `
-                          <div class="twpx-fixed-button">
+                          <div class="twpx-fixed-button landing-block g-pt-30 g-pb-30">
                             <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10" data-fixed-button-position="7">Кнопка</a>
                           </div>
                         `,
@@ -509,13 +509,15 @@
               PREVIEW:
                 'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/preview.png',
               CONTENT: `
-    <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
-      <div class="landing-block-node-consent-popup-text-block g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
-        <span class="landing-block-node-consent-popup-text">На сайте СРО ААС используются файлы cookie. Оставаясь на sroaas.ru, вы принимаете</span> <a href="" class="landing-block-node-consent-popup-link">пользовательское соглашение</a>.
+    <div class="landing-block g-pt-30 g-pb-30">
+      <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
+        <div class="landing-block-node-consent-popup-text-block g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
+          <span class="landing-block-node-consent-popup-text">На сайте СРО ААС используются файлы cookie. Оставаясь на sroaas.ru, вы принимаете</span> <a href="" class="landing-block-node-consent-popup-link">пользовательское соглашение</a>.
+        </div>
+        <div class="landing-block-node-consent-popup-button g-bg-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">
+          Любой текст
+        </div>
       </div>
-      <a href="" class="landing-block-node-consent-popup-button g-bg-white g-color-black g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">
-        Любой текст
-      </a>
     </div>
                         `,
             },
@@ -540,66 +542,70 @@
               },
               style: {
                 block: {
-                  type: ['block-default', 'border-radius'],
-                  additional: {
-                    name: 'Настройки блока',
-                    attrs: [
-                      {
-                        name: 'Ширина блока',
-                        type: 'slider',
-                        attribute: 'data-width',
-                        items: [
-                          {
-                            name: '25%',
-                            value: '25',
-                          },
-                          {
-                            name: '33%',
-                            value: '33',
-                          },
-                          {
-                            name: '50%',
-                            value: '50',
-                          },
-                          {
-                            name: '75%',
-                            value: '75',
-                          },
-                          {
-                            name: '100%',
-                            value: '100',
-                          },
-                        ],
-                        value: '50',
-                      },
-                      {
-                        name: 'Положение блока',
-                        type: 'dropdown',
-                        attribute: 'data-align',
-                        items: {
-                          left: 'Слева',
-                          center: 'По центру',
-                          right: 'Справа',
-                        },
-                      },
-                      {
-                        name: 'Положение кнопки и текста внутри блока',
-                        type: 'dropdown',
-                        attribute: 'data-direction',
-                        items: {
-                          row: 'Текст слева, кнопка справа',
-                          'row-reverse': 'Текст справа, кнопка слева',
-                          column: 'Текст сверху, кнопка снизу',
-                          'column-reverse': 'Текст снизу, кнопка сверху',
-                        },
-                      },
-                    ],
-                  },
+                  type: ['display'],
                 },
                 nodes: {
+                  '.landing-block-node-consent-popup': {
+                    name: 'Блок',
+                    type: ['block-default', 'border-radius'],
+                    additional: {
+                      name: 'Настройки блока',
+                      attrs: [
+                        {
+                          name: 'Ширина блока',
+                          type: 'slider',
+                          attribute: 'data-width',
+                          items: [
+                            {
+                              name: '25%',
+                              value: '25',
+                            },
+                            {
+                              name: '33%',
+                              value: '33',
+                            },
+                            {
+                              name: '50%',
+                              value: '50',
+                            },
+                            {
+                              name: '75%',
+                              value: '75',
+                            },
+                            {
+                              name: '100%',
+                              value: '100',
+                            },
+                          ],
+                          value: '100',
+                        },
+                        {
+                          name: 'Положение блока',
+                          type: 'dropdown',
+                          attribute: 'data-align',
+                          items: {
+                            left: 'Слева',
+                            center: 'По центру',
+                            right: 'Справа',
+                          },
+                        },
+                        {
+                          name: 'Положение кнопки и текста внутри блока',
+                          type: 'dropdown',
+                          attribute: 'data-direction',
+                          items: {
+                            row: 'Текст слева, кнопка справа',
+                            'row-reverse': 'Текст справа, кнопка слева',
+                            column: 'Текст сверху, кнопка снизу',
+                            'column-reverse': 'Текст снизу, кнопка сверху',
+                          },
+                        },
+                      ],
+                    },
+                  },
                   '.landing-block-node-consent-popup-text-block': {
                     name: 'Текст',
-                    type: 'typo-simple',
+                    type: 'typo',
                   },
                   '.landing-block-node-consent-popup-link': {
                     name: 'Ссылка',
