@@ -26,10 +26,10 @@
 [id^='block'] .twpx-fixed-button a {
   position: relative !important;
   top: auto !important;
-  right: auto !important;
   bottom: auto !important;
-  left: auto !important;
+  left: 80px !important;
   display: inline-flex;
+  z-index: inherit;
 }
 
 @media (min-width: 768px) {
