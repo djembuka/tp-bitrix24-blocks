@@ -71,8 +71,7 @@
                     <div class="landing-block-node-marquee">
                       <a href="/"
                         class="marquee3k landing-block-node-marquee-link g-bg-gray-light-v5 g-height-80">
-                        <span class="landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans">-15% по промокоду SNOW24 на модели без скидок. Бесплатная доставка
-                          в регионы</span>
+                        <span class="landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans">Информация в бегущей строке</span>
                       </a>
                     </div>
                   </section>
@@ -191,8 +190,8 @@
           BX24.callMethod('landing.repo.register', {
             code: 'twinpx.tags',
             fields: {
-              NAME: 'Тэги',
-              DESCRIPTION: 'Ссылки в виде тэгов',
+              NAME: 'Теги',
+              DESCRIPTION: 'Ссылки в виде тегов',
               SECTIONS: 'tiles',
               PREVIEW: 'https://b24.twinpx.ru/bitrix24-blocks/tags/preview.png',
               CONTENT: `
@@ -201,10 +200,10 @@
                         <div class="container">
                             <div class="landing-block-node-tags-container">
                                 <span class="landing-block-node-card landing-block-node-tags-item">
-                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Любой текст</a>
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
                                 </span>
                                 <span class="landing-block-node-card landing-block-node-tags-item">
-                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Очень длинный текст</a>
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
                                 </span>
                             </div>
                         </div>
@@ -213,18 +212,18 @@
             },
             manifest: {
               block: {
-                name: 'Ссылки в виде тэгов',
+                name: 'Ссылки в виде тегов',
                 section: ['tiles'],
               },
               nodes: {
                 '.landing-block-node-card-container': {
-                  name: 'Тэг',
+                  name: 'Тег',
                   type: 'link',
                 },
               },
               cards: {
                 '.landing-block-node-card': {
-                  name: 'Карточка тэга',
+                  name: 'Карточка тега',
                   label: ['.landing-block-node-card-container'],
                 },
               },
@@ -236,7 +235,7 @@
                     type: ['text-align'],
                   },
                   '.landing-block-node-tags-item-link': {
-                    name: 'Тэг',
+                    name: 'Тег',
                     type: [
                       'color',
                       'font-family',
@@ -260,7 +259,7 @@
           BX24.callMethod('landing.repo.register', {
             code: 'twinpx.blocks',
             fields: {
-              NAME: 'Иконки соц. сетей. Twinpx',
+              NAME: 'Иконки соц. сетей',
               DESCRIPTION: 'Иконки для быстрых ссылок на социальные сети.',
               SECTIONS: 'Twin px',
               PREVIEW:
@@ -512,10 +511,10 @@
     <div class="landing-block g-pt-30 g-pb-30">
       <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
         <div class="landing-block-node-consent-popup-text-block g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
-          <span class="landing-block-node-consent-popup-text">На сайте СРО ААС используются файлы cookie. Оставаясь на sroaas.ru, вы принимаете</span> <a href="" class="landing-block-node-consent-popup-link">пользовательское соглашение</a>.
+          <span class="landing-block-node-consent-popup-text">На сайте используются файлы cookie. Оставаясь на сайте, <a href="">вы принимаете пользовательское соглашение</a>.</span>
         </div>
         <div class="landing-block-node-consent-popup-button g-bg-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">
-          Любой текст
+          Согласен
         </div>
       </div>
     </div>
@@ -531,12 +530,8 @@
                   name: 'Текст',
                   type: 'text',
                 },
-                '.landing-block-node-consent-popup-link': {
-                  name: 'Ссылка',
-                  type: 'link',
-                },
                 '.landing-block-node-consent-popup-button': {
-                  name: 'Кнопка закрытия окна',
+                  name: 'Кнопка',
                   type: 'text',
                 },
               },
@@ -606,10 +601,6 @@
                   '.landing-block-node-consent-popup-text-block': {
                     name: 'Текст',
                     type: 'typo',
-                  },
-                  '.landing-block-node-consent-popup-link': {
-                    name: 'Ссылка',
-                    type: 'typo-link',
                   },
                   '.landing-block-node-consent-popup-button': {
                     name: 'Кнопка закрытия окна',

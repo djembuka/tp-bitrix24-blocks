@@ -29,6 +29,7 @@
   bottom: auto !important;
   left: 80px !important;
   display: inline-flex;
+  transform: translate(0) !important;
   z-index: inherit;
 }
 
