@@ -1,80 +1,111 @@
 body {
-  background-color: #eef2f4 !important;
-  padding: 20px;
+  background-color: #fff !important;
+  padding: 64px;
+  margin: 0;
 }
 
 .twpx-application {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
+  padding: 64px;
+  width: 600px;
+}
+
+.twpx-logo {
+  margin-bottom: 64px;
+}
+
+.twpx-version {
+  color: #000;
+  font-family: Geologica, 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-bottom: 27px;
+}
+.twpx-heading {
+  color: #000;
+  font-family: Geologica, 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-bottom: 27px;
+}
+.twpx-text {
+  color: #000;
+  font-family: Geologica, 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 64px;
+}
+.twpx-text p {
+  margin-bottom: 32px;
+}
+.twpx-buttons {
 }
 
 .twpx-button {
   display: inline-block;
-  height: 39px;
-  line-height: 39px;
-  margin: 0 12px 0 0;
-  background: #ecedef;
-  border-radius: 2px;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 16px 0 0;
+  background: #6cff7d;
+  border-radius: 22px;
   cursor: pointer;
-  color: #7a818a;
+  color: #000000;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
   outline: 0;
-  padding: 0 18px;
+  padding: 0 32px;
   vertical-align: middle;
   text-decoration: none;
-  text-transform: uppercase;
   text-shadow: none;
   white-space: nowrap;
-  -webkit-box-shadow: 0 0 0 1px #c6cdd3 inset;
-  box-shadow: 0 0 0 1px #c6cdd3 inset;
+  -webkit-box-shadow: none;
+  box-shadow: none;
   -webkit-font-smoothing: antialiased;
-  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  transition: background-color 0.2s linear, color 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 .twpx-button:before,
 .twpx-button:after {
   display: none;
 }
 .twpx-button:hover {
-  background: #cfd4d8;
-  color: #535c69;
+  opacity: 0.7;
 }
 .twpx-button:last-child {
   margin-right: 0;
 }
 
 .twpx-button--activate {
-  background: transparent;
-  border-color: #c6cdd3;
-  color: #535b69;
+  background: #6cff7d;
+  color: #000;
 }
 .twpx-button--activate:hover {
-  background: #cfd4d8;
-  border-color: #c6cdd3;
+  opacity: 0.7;
 }
 .twpx-button--activate:active {
-  background: #dde2e5;
-  border-color: #9fa4ab;
+  opacity: 0.7;
 }
 .twpx-button--deactivate {
-  background: #bbed21;
-  border-color: #bbed21;
-  color: #535c69;
+  background: #ffe3e3;
+  color: #000;
 }
 .twpx-button--deactivate:hover {
-  background: #d2f95f;
-  border-color: #d2f95f;
+  opacity: 0.7;
 }
 .twpx-button--deactivate:active {
-  background: #b2e232;
-  border-color: #b2e232;
+  opacity: 0.7;
 }
 .twpx-button--disabled {
-  background-color: #ededed;
-  color: #a7abb1;
+  background-color: #f0f0f0;
+  color: #000000;
+  opacity: 0.2;
   cursor: default;
   pointer-events: none;
 }
