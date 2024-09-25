@@ -28,6 +28,10 @@
   transform: translateY(0);
   z-index: inherit;
 }
+[id^='block'] .landing-block-node-consent-popup-wrapper {
+  padding-top: 2.14286rem !important;
+  padding-bottom: 2.14286rem !important;
+}
 .landing-block-node-consent-popup--show {
   opacity: 1;
   -webkit-transform: translateY(0);
@@ -132,6 +136,8 @@
     left: 15px;
     display: block;
     padding: 25px !important;
+    -webkit-transform: translateX(0) !important;
+    transform: translateX(0) !important;
   }
 
   .landing-block-node-consent-popup-text-block {
