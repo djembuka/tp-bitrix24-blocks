@@ -31,14 +31,6 @@
           и ссылки самостоятельно для каждого аккаунта.
         </p>
       </div>
-      <div class="twpx-buttons">
-        <span class="twpx-button--activate twpx-button">
-          Активировать блоки
-        </span>
-        <span class="twpx-button--deactivate twpx-button twpx-button--disabled">
-          Деактивировать
-        </span>
-      </div>
     </div>
 
     <div id="result"></div>
@@ -47,43 +39,10 @@
 
     <script>
       window.addEventListener('load', () => {
-        const activateButton = document.querySelector('.twpx-button--activate');
-        const deactivateButton = document.querySelector(
-          '.twpx-button--deactivate'
-        );
-
-        deactivateButton.addEventListener('click', (e) => {
-          e.preventDefault();
-          BX24.callMethod(
-            'landing.repo.unregister',
-            {
-              code: 'twinpx.marquee',
-            },
-            (result) => {
-              activateButton.classList.remove('twpx-button--disabled');
-              deactivateButton.classList.add('twpx-button--disabled');
-            }
-          );
-          BX24.callMethod('landing.repo.unregister', { code: 'twinpx.tags' });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.socialbuttons',
-          });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.fixedbutton',
-          });
-          BX24.callMethod('landing.repo.unregister', {
-            code: 'twinpx.consentpopup',
-          });
-        });
-
-        activateButton.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          activateButton.classList.add('twpx-button--disabled');
-          deactivateButton.classList.remove('twpx-button--disabled');
-
-          //marquee
-          BX24.callMethod('landing.repo.register', {
+        //marquee
+        BX24.callMethod(
+          'landing.repo.register',
+          {
             code: 'twinpx.marquee',
             fields: {
               NAME: 'Бегущая строка',
@@ -94,10 +53,9 @@
               CONTENT: `
                   <section class="twpxMarquee landing-block g-pt-30 g-pb-30">
                     <div class="landing-block-node-marquee">
-                      <a href="/"
-                        class="marquee3k landing-block-node-marquee-link g-bg-gray-light-v5 g-height-80">
-                        <span class="landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans">Информация в бегущей строке</span>
-                      </a>
+                      <div class="marquee3k landing-block-node-marquee-block g-bg-gray-light-v5 g-height-80">
+                        <a href="/" class="landing-block-node-marquee-link landing-block-node-marquee-text g-color-black g-font-size-24 g-font-open-sans">Информация в бегущей строке</a>
+                      </div>
                     </div>
                   </section>
                 `,
@@ -112,17 +70,13 @@
                   name: 'Ссылка',
                   type: 'link',
                 },
-                '.landing-block-node-marquee-text': {
-                  name: 'Текст',
-                  type: 'text',
-                },
               },
               style: {
                 block: {
                   type: ['block-default'],
                 },
                 nodes: {
-                  '.landing-block-node-marquee-link': {
+                  '.landing-block-node-marquee-block': {
                     name: 'Фон',
                     type: ['background-color'],
                     additional: {
@@ -209,10 +163,16 @@
                 js: ['https://b24.twinpx.ru/bitrix24-blocks/marquee/script.js'],
               },
             },
-          });
+          },
+          (res) => {
+            console.log('twinpx.marquee', res.data());
+          }
+        );
 
-          //tags
-          BX24.callMethod('landing.repo.register', {
+        //tags
+        BX24.callMethod(
+          'landing.repo.register',
+          {
             code: 'twinpx.tags',
             fields: {
               NAME: 'Теги',
@@ -278,10 +238,16 @@
                 css: ['https://b24.twinpx.ru/bitrix24-blocks/tags/style.css'],
               },
             },
-          });
+          },
+          (res) => {
+            console.log('twinpx.tags', res.data());
+          }
+        );
 
-          //social-buttons
-          BX24.callMethod('landing.repo.register', {
+        //social-buttons
+        BX24.callMethod(
+          'landing.repo.register',
+          {
             code: 'twinpx.blocks',
             fields: {
               NAME: 'Иконки соц. сетей',
@@ -446,10 +412,16 @@
                 ],
               },
             },
-          });
+          },
+          (res) => {
+            console.log('twinpx.blocks', res.data());
+          }
+        );
 
-          //fixed-button
-          BX24.callMethod('landing.repo.register', {
+        //fixed-button
+        BX24.callMethod(
+          'landing.repo.register',
+          {
             code: 'twinpx.fixedbutton',
             fields: {
               NAME: 'Кнопка отправки запроса',
@@ -459,7 +431,7 @@
               PREVIEW:
                 'https://b24.twinpx.ru/bitrix24-blocks/fixed-button/preview.png',
               CONTENT: `
-                          <div class="twpx-fixed-button landing-block g-pt-30 g-pb-30">
+                          <div class="twpx-fixed-button landing-block">
                             <a href="" class="landing-block-node g-bg-black g-color-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10" data-fixed-button-position="7">Кнопка</a>
                           </div>
                         `,
@@ -521,10 +493,16 @@
                 ],
               },
             },
-          });
+          },
+          (res) => {
+            console.log('twinpx.fixedbutton', res.data());
+          }
+        );
 
-          //consent-popup
-          BX24.callMethod('landing.repo.register', {
+        //consent-popup
+        BX24.callMethod(
+          'landing.repo.register',
+          {
             code: 'twinpx.consentpopup',
             fields: {
               NAME: 'Пользовательское соглашение без картинки',
@@ -649,8 +627,11 @@
                 ],
               },
             },
-          });
-        });
+          },
+          (res) => {
+            console.log('twinpx.consentpopup', res.data());
+          }
+        );
       });
     </script>
   </body>
