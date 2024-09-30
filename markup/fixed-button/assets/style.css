@@ -33,6 +33,11 @@
   z-index: inherit;
 }
 
+[id^='block'] .twpx-fixed-button {
+  padding-top: 2.14286rem !important;
+  padding-bottom: 2.14286rem !important;
+}
+
 @media (min-width: 768px) {
   .twpx-fixed-button a {
     width: auto;
