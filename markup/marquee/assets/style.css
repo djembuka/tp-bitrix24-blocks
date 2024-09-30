@@ -9,6 +9,9 @@
 a.landing-block-node-marquee-link:not(.g-text-underline):hover {
   text-decoration: none !important;
 }
+.twpxMarquee .marquee3k {
+  overflow: hidden;
+}
 .twpxMarquee .marquee3k__wrapper {
   height: 100%;
 }
