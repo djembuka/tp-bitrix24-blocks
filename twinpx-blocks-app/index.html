@@ -194,10 +194,10 @@
                         <div class="container">
                             <div class="landing-block-node-tags-container">
                                 <span class="landing-block-node-card landing-block-node-tags-item">
-                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
                                 </span>
                                 <span class="landing-block-node-card landing-block-node-tags-item">
-                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-mr-8 g-ml-8 g-mb-16 g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
                                 </span>
                             </div>
                         </div>
@@ -227,6 +227,83 @@
                   '.landing-block-node-tags-container': {
                     name: 'Выравнивание',
                     type: ['text-align'],
+                    additional: {
+                      name: 'Расстояние между тегами',
+                      attrs: [
+                        {
+                          name: 'Расстояние по горизонтали',
+                          type: 'slider',
+                          attribute: 'data-gap-hor',
+                          items: [
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                          ],
+                          value: '32',
+                        },
+                        {
+                          name: 'Расстояние по вертикали',
+                          type: 'slider',
+                          attribute: 'data-gap-ver',
+                          items: [
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                          ],
+                          value: '32',
+                        },
+                      ],
+                    },
                   },
                   '.landing-block-node-tags-item-link': {
                     name: 'Тег',
