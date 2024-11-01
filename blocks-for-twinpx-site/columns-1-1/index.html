@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Twinpx Columns 1:1</title>
+  </head>
+  <body style="background-color: #000 !important; padding: 0; margin: 0">
+    <iframe
+      src="https://2px.ru/blocksb24/"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      id="twpxIframe"
+      style="height: 100vh; overflow: hidden"
+    ></iframe>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.columns-1-1',
+            fields: {
+              NAME: 'Изображение и текст 1:1 (1)',
+              DESCRIPTION: 'Изображение и текст 1:1 (1)',
+              SECTIONS: 'Twin px',
+              PREVIEW:
+                'https://b24.twinpx.ru/bitrix24-blocks/columns-1-1/preview.png',
+              CONTENT: `
+                <section class="landing-block g-pt-30 g-pb-30">
+                    <div class="twpxTextBlock container">
+                        <img src="https://b24.twinpx.ru/bitrix24-blocks/columns-1-1/pic1.jpg" alt="" class="twpx-text-block-img g-mb-30 g-width-100x" />
+                        <p
+                        class="twpx-text-block-p g-font-size-24 g-font-open-sans g-color-gray-dark-v2 g-line-height-1_5 g-my-0"
+                        >
+                        Сервис проверки электронной цифровой подписи встроенной в PDF
+                        документ.
+                        </p>
+                    </div>
+                </section>`,
+            },
+            manifest: {
+              block: {
+                name: 'Изображение и текст 1:1 (1)',
+                section: ['columns'],
+              },
+              nodes: {
+                '.twpx-text-block-img': {
+                  name: 'Изображение',
+                  type: 'img',
+                },
+                '.twpx-text-block-p': {
+                  name: 'Текст',
+                  type: 'text',
+                },
+              },
+              style: {
+                block: 'block-default',
+                nodes: {
+                  '.twpx-text-block-p': {
+                    name: 'Текст',
+                    type: ['typo'],
+                  },
+                },
+              },
+              assets: {
+                css: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/columns-1-1/style.css',
+                ],
+              },
+            },
+          },
+          (result) => {
+            // if (result.error()) console.error(result.error());
+            // else console.log('Added');
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

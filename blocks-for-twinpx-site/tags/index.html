@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Twinpx Tags</title>
+  </head>
+  <body style="background-color: #000 !important; padding: 0; margin: 0">
+    <iframe
+      src="https://2px.ru/blocksb24/"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      id="twpxIframe"
+      style="height: 100vh; overflow: hidden"
+    ></iframe>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.tags',
+            fields: {
+              NAME: 'Теги (1)',
+              DESCRIPTION: 'Ссылки в виде тегов',
+              SECTIONS: 'Twin px',
+              PREVIEW: 'https://b24.twinpx.ru/bitrix24-blocks/tags/preview.png',
+              CONTENT: `
+                <div class="twpxTags landing-block g-pt-30 g-pb-30">
+                    <div class="landing-block-node-tags">
+                        <div class="container">
+                            <div class="landing-block-node-tags-container">
+                                <span class="landing-block-node-card landing-block-node-tags-item">
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
+                                </span>
+                                <span class="landing-block-node-card landing-block-node-tags-item">
+                                  <a href="" class="g-button-color g-px-30 g-rounded-25 g-bg-black g-color-white g-font-size-16 g-font-open-sans g-flex-centered g-text-underline--none--hover landing-block-node-tags-item-link landing-block-node-card-container">Тег</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>`,
+            },
+            manifest: {
+              block: {
+                name: 'Теги (1)',
+                section: ['tiles'],
+              },
+              nodes: {
+                '.landing-block-node-card-container': {
+                  name: 'Тег',
+                  type: 'link',
+                },
+              },
+              cards: {
+                '.landing-block-node-card': {
+                  name: 'Карточка тега',
+                  label: ['.landing-block-node-card-container'],
+                },
+              },
+              style: {
+                block: 'block-default',
+                nodes: {
+                  '.landing-block-node-tags-container': {
+                    name: 'Выравнивание',
+                    type: ['text-align'],
+                    additional: {
+                      name: 'Расстояние между тегами',
+                      attrs: [
+                        {
+                          name: 'Расстояние по горизонтали',
+                          type: 'slider',
+                          attribute: 'data-gap-hor',
+                          items: [
+                            {
+                              name: '0',
+                              value: '0',
+                            },
+                            {
+                              name: '4',
+                              value: '4',
+                            },
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                            {
+                              name: '36',
+                              value: '36',
+                            },
+                            {
+                              name: '40',
+                              value: '40',
+                            },
+                            {
+                              name: '44',
+                              value: '44',
+                            },
+                            {
+                              name: '48',
+                              value: '48',
+                            },
+                            {
+                              name: '52',
+                              value: '52',
+                            },
+                            {
+                              name: '56',
+                              value: '56',
+                            },
+                            {
+                              name: '60',
+                              value: '60',
+                            },
+                            {
+                              name: '64',
+                              value: '64',
+                            },
+                            {
+                              name: '68',
+                              value: '68',
+                            },
+                            {
+                              name: '72',
+                              value: '72',
+                            },
+                            {
+                              name: '76',
+                              value: '76',
+                            },
+                            {
+                              name: '80',
+                              value: '80',
+                            },
+                            {
+                              name: '84',
+                              value: '84',
+                            },
+                            {
+                              name: '88',
+                              value: '88',
+                            },
+                            {
+                              name: '92',
+                              value: '92',
+                            },
+                            {
+                              name: '96',
+                              value: '96',
+                            },
+                            {
+                              name: '100',
+                              value: '100',
+                            },
+                            {
+                              name: '104',
+                              value: '104',
+                            },
+                            {
+                              name: '108',
+                              value: '108',
+                            },
+                            {
+                              name: '112',
+                              value: '112',
+                            },
+                            {
+                              name: '116',
+                              value: '116',
+                            },
+                            {
+                              name: '120',
+                              value: '120',
+                            },
+                            {
+                              name: '124',
+                              value: '124',
+                            },
+                            {
+                              name: '128',
+                              value: '128',
+                            },
+                            {
+                              name: '132',
+                              value: '132',
+                            },
+                          ],
+                          value: '32',
+                        },
+                        {
+                          name: 'Расстояние по вертикали',
+                          type: 'slider',
+                          attribute: 'data-gap-ver',
+                          items: [
+                            {
+                              name: '0',
+                              value: '0',
+                            },
+                            {
+                              name: '4',
+                              value: '4',
+                            },
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                            {
+                              name: '36',
+                              value: '36',
+                            },
+                            {
+                              name: '40',
+                              value: '40',
+                            },
+                            {
+                              name: '44',
+                              value: '44',
+                            },
+                            {
+                              name: '48',
+                              value: '48',
+                            },
+                            {
+                              name: '52',
+                              value: '52',
+                            },
+                            {
+                              name: '56',
+                              value: '56',
+                            },
+                            {
+                              name: '60',
+                              value: '60',
+                            },
+                            {
+                              name: '64',
+                              value: '64',
+                            },
+                            {
+                              name: '68',
+                              value: '68',
+                            },
+                            {
+                              name: '72',
+                              value: '72',
+                            },
+                            {
+                              name: '76',
+                              value: '76',
+                            },
+                            {
+                              name: '80',
+                              value: '80',
+                            },
+                            {
+                              name: '84',
+                              value: '84',
+                            },
+                            {
+                              name: '88',
+                              value: '88',
+                            },
+                            {
+                              name: '92',
+                              value: '92',
+                            },
+                            {
+                              name: '96',
+                              value: '96',
+                            },
+                            {
+                              name: '100',
+                              value: '100',
+                            },
+                            {
+                              name: '104',
+                              value: '104',
+                            },
+                            {
+                              name: '108',
+                              value: '108',
+                            },
+                            {
+                              name: '112',
+                              value: '112',
+                            },
+                            {
+                              name: '116',
+                              value: '116',
+                            },
+                            {
+                              name: '120',
+                              value: '120',
+                            },
+                            {
+                              name: '124',
+                              value: '124',
+                            },
+                            {
+                              name: '128',
+                              value: '128',
+                            },
+                            {
+                              name: '132',
+                              value: '132',
+                            },
+                          ],
+                          value: '32',
+                        },
+                      ],
+                    },
+                  },
+                  '.landing-block-node-tags-item-link': {
+                    name: 'Тег',
+                    type: [
+                      'color',
+                      'font-family',
+                      'font-size',
+                      'font-weight',
+                      'background-color',
+                      'border-color',
+                      'border-width',
+                      'border-radius',
+                    ],
+                  },
+                },
+              },
+              assets: {
+                css: ['https://b24.twinpx.ru/bitrix24-blocks/tags/style.css'],
+              },
+            },
+          },
+          (res) => {
+            // console.log('twinpx.tags', res.data());
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

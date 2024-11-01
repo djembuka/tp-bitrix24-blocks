@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Twinpx Consent popup</title>
+  </head>
+  <body style="background-color: #000 !important; padding: 0; margin: 0">
+    <iframe
+      src="https://2px.ru/blocksb24/"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      id="twpxIframe"
+      style="height: 100vh; overflow: hidden"
+    ></iframe>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.consent-popup',
+            fields: {
+              NAME: 'Окна с пользовательским соглашением (1)',
+              DESCRIPTION: 'Окна с пользовательским соглашением (1)',
+              SECTIONS: 'Twin px',
+              PREVIEW:
+                'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/preview.png',
+              CONTENT: `
+                <div class="landing-block-node-consent-popup-wrapper landing-block">
+                  <div class="twpxConsentPopup landing-block-node-consent-popup g-bg-black g-rounded-7 g-py-25 g-px-35">
+                    <div class="landing-block-node-consent-popup-text-block g-color-white g-font-open-sans g-font-size-20 g-font-weight-400">
+                      <span class="landing-block-node-consent-popup-text">На сайте используются файлы cookie. Оставаясь на сайте, <a href="">вы принимаете пользовательское соглашение</a>.</span>
+                    </div>
+                    <div class="landing-block-node-consent-popup-button g-bg-white g-font-open-sans g-font-size-20 g-font-weight-400 g-rounded-50 g-px-35 g-py-10">
+                      Согласен
+                    </div>
+                  </div>
+                </div>`,
+            },
+            manifest: {
+              block: {
+                name: 'Пользовательское соглашение без картинки',
+                section: ['tiles'],
+              },
+              nodes: {
+                '.landing-block-node-consent-popup-text': {
+                  name: 'Текст',
+                  type: 'text',
+                },
+                '.landing-block-node-consent-popup-button': {
+                  name: 'Кнопка',
+                  type: 'text',
+                },
+              },
+              style: {
+                block: {
+                  type: ['display'],
+                },
+                nodes: {
+                  '.landing-block-node-consent-popup': {
+                    name: 'Блок',
+                    type: ['block-default', 'border-radius'],
+                    additional: {
+                      name: 'Настройки блока',
+                      attrs: [
+                        {
+                          name: 'Ширина блока',
+                          type: 'slider',
+                          attribute: 'data-width',
+                          items: [
+                            {
+                              name: '25%',
+                              value: '25',
+                            },
+                            {
+                              name: '33%',
+                              value: '33',
+                            },
+                            {
+                              name: '50%',
+                              value: '50',
+                            },
+                            {
+                              name: '75%',
+                              value: '75',
+                            },
+                            {
+                              name: '100%',
+                              value: '100',
+                            },
+                          ],
+                          value: '100',
+                        },
+                        {
+                          name: 'Положение блока',
+                          type: 'dropdown',
+                          attribute: 'data-align',
+                          items: {
+                            left: 'Слева',
+                            center: 'По центру',
+                            right: 'Справа',
+                          },
+                        },
+                        {
+                          name: 'Положение кнопки и текста внутри блока',
+                          type: 'dropdown',
+                          attribute: 'data-direction',
+                          items: {
+                            row: 'Текст слева, кнопка справа',
+                            'row-reverse': 'Текст справа, кнопка слева',
+                            column: 'Текст сверху, кнопка снизу',
+                            'column-reverse': 'Текст снизу, кнопка сверху',
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  '.landing-block-node-consent-popup-text-block': {
+                    name: 'Текст',
+                    type: 'typo',
+                  },
+                  '.landing-block-node-consent-popup-button': {
+                    name: 'Кнопка закрытия окна',
+                    type: [
+                      'color',
+                      'font-family',
+                      'font-size',
+                      'font-weight',
+                      'background-color',
+                      'border-radius',
+                    ],
+                  },
+                },
+              },
+              assets: {
+                css: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/style.css',
+                ],
+                js: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/consent-popup/script.js',
+                ],
+              },
+            },
+          },
+          (result) => {
+            // if (result.error()) console.error(result.error());
+            // else console.log('Added');
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

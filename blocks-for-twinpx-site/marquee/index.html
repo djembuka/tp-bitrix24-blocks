@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Twinpx Marquee</title>
+  </head>
+  <body style="background-color: #000 !important; padding: 0; margin: 0">
+    <iframe
+      src="https://2px.ru/blocksb24/"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      id="twpxIframe"
+      style="height: 100vh; overflow: hidden"
+    ></iframe>
+
+    <div id="result"></div>
+
+    <script src="//api.bitrix24.com/api/v1/"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.marquee',
+            fields: {
+              NAME: 'Бегущая строка (1)',
+              DESCRIPTION: 'Бегущая строка с текстом рекламы или анонса.',
+              SECTIONS: 'Twin px',
+              PREVIEW:
+                'https://b24.twinpx.ru/bitrix24-blocks/marquee/preview.png',
+              CONTENT: `
+                  <section class="twpxMarquee landing-block g-pt-30 g-pb-30">
+                    <div class="landing-block-node-marquee">
+                      <div class="marquee3k landing-block-node-marquee-block g-bg-black">
+                        <a href="/" class="landing-block-node-marquee-link landing-block-node-marquee-text g-color-white g-font-size-24 g-font-open-sans">Информация в бегущей строке</a>
+                      </div>
+                    </div>
+                  </section>
+                `,
+            },
+            manifest: {
+              block: {
+                name: 'Бегущая строка',
+                section: ['tiles'],
+              },
+              nodes: {
+                '.landing-block-node-marquee-link': {
+                  name: 'Ссылка',
+                  type: 'link',
+                },
+              },
+              style: {
+                block: {
+                  type: ['block-default'],
+                },
+                nodes: {
+                  '.landing-block-node-marquee-block': {
+                    name: 'Фон',
+                    type: ['background-color'],
+                    additional: {
+                      name: 'Настройки, высота',
+                      attrs: [
+                        {
+                          name: 'Скорость движения',
+                          type: 'slider',
+                          attribute: 'data-speed',
+                          items: [
+                            {
+                              name: '1',
+                              value: '0.1',
+                            },
+                            {
+                              name: '2',
+                              value: '0.2',
+                            },
+                            {
+                              name: '3',
+                              value: '0.3',
+                            },
+                            {
+                              name: '4',
+                              value: '0.4',
+                            },
+                            {
+                              name: '5',
+                              value: '0.5',
+                            },
+                            {
+                              name: '6',
+                              value: '0.6',
+                            },
+                            {
+                              name: '7',
+                              value: '0.7',
+                            },
+                            {
+                              name: '8',
+                              value: '0.8',
+                            },
+                            {
+                              name: '9',
+                              value: '0.9',
+                            },
+                            {
+                              name: '10',
+                              value: '1',
+                            },
+                            {
+                              name: '20',
+                              value: '2',
+                            },
+                            {
+                              name: '30',
+                              value: '3',
+                            },
+                          ],
+                          value: '0.3',
+                        },
+                        {
+                          name: 'Направление движения',
+                          type: 'dropdown',
+                          attribute: 'data-reverse',
+                          items: {
+                            1: 'Слева направо',
+                            2: 'Справа налево',
+                          },
+                        },
+                        {
+                          name: 'Высота',
+                          type: 'slider',
+                          attribute: 'data-height',
+                          items: [
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '30',
+                              value: '30',
+                            },
+                            {
+                              name: '40',
+                              value: '40',
+                            },
+                            {
+                              name: '50',
+                              value: '50',
+                            },
+                            {
+                              name: '60',
+                              value: '60',
+                            },
+                            {
+                              name: '70',
+                              value: '70',
+                            },
+                            {
+                              name: '80',
+                              value: '80',
+                            },
+                            {
+                              name: '90',
+                              value: '90',
+                            },
+                            {
+                              name: '100',
+                              value: '100',
+                            },
+                            {
+                              name: '110',
+                              value: '110',
+                            },
+                            {
+                              name: '120',
+                              value: '120',
+                            },
+                            {
+                              name: '130',
+                              value: '130',
+                            },
+                            {
+                              name: '140',
+                              value: '140',
+                            },
+                            {
+                              name: '150',
+                              value: '150',
+                            },
+                            {
+                              name: '160',
+                              value: '160',
+                            },
+                            {
+                              name: '170',
+                              value: '170',
+                            },
+                            {
+                              name: '180',
+                              value: '180',
+                            },
+                            {
+                              name: '190',
+                              value: '190',
+                            },
+                            {
+                              name: '200',
+                              value: '200',
+                            },
+                          ],
+                          value: '80',
+                        },
+                      ],
+                    },
+                  },
+                  '.landing-block-node-marquee-text': {
+                    name: 'Текст',
+                    type: ['typo'],
+                  },
+                },
+              },
+              assets: {
+                css: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/marquee/style.css',
+                ],
+                js: ['https://b24.twinpx.ru/bitrix24-blocks/marquee/script.js'],
+              },
+            },
+          },
+          (res) => {
+            // console.log('twinpx.marquee', res.data());
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
