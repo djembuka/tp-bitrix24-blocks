@@ -1,40 +1,274 @@
 .landing-block-node-product-blocks-container {
+  --cols: 2;
+  --gap-hor: 16px;
+  --gap-ver: 16px;
   display: grid;
-  gap: 16px;
-  grid-template-columns: calc((100% - 16px) / 2) calc((100% - 16px) / 2);
+  column-gap: var(--gap-hor);
+  row-gap: var(--gap-ver);
 }
-.landing-block-node-product-blocks-container.text-left {
-  justify-content: flex-start;
-}
-.landing-block-node-product-blocks-container.text-center {
-  justify-content: center;
-}
-.landing-block-node-product-blocks-container.text-right {
-  justify-content: flex-end;
-}
-.landing-block-node-product-blocks-container.text-justify {
-  justify-content: space-between;
-}
-
 .landing-block-node-product-block {
+  --gap-hor-card: 16px;
+  --gap-ver-card: 16px;
   display: grid;
-  gap: 16px;
-  grid-template-columns: calc(50% - 8px) calc(50% - 8px);
-}
-.landing-block-node-product-block h2 {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  margin: 0;
-}
-.landing-block-node-product-block-text-sub {
-  grid-column: 1 / 3;
+  column-gap: var(--gap-hor-card);
+  row-gap: var(--gap-ver-card);
 }
 .landing-block-node-product-block-price {
   display: grid;
-  gap: 16px;
+  row-gap: var(--gap-ver-card);
 }
-.landing-block-node-product-block-button-block {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.landing-block-node-product-block-button-block a {
+  display: block;
+  margin-top: var(--gap-ver-card);
 }
+
+@media (min-width: 768px) {
+  .landing-block-node-product-blocks-container {
+    grid-template-columns: repeat(
+      var(--cols),
+      calc((100% - var(--gap-hor) * (var(--cols) - 1)) / var(--cols))
+    );
+  }
+  .landing-block-node-product-block {
+    grid-template-columns: calc(50% - var(--gap-hor-card) / 2) calc(
+        50% - var(--gap-hor-card) / 2
+      );
+  }
+  .landing-block-node-product-block h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    margin: 0;
+  }
+  .landing-block-node-product-block-text-sub {
+    grid-column: 1 / 3;
+  }
+  .landing-block-node-product-block-button-block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .landing-block-node-product-block-button-block a {
+    margin-top: 0;
+  }
+}
+
+.landing-block-node-product-blocks-container[data-cols='1'] {
+  --cols: 1;
+}
+.landing-block-node-product-blocks-container[data-cols='2'] {
+  --cols: 2;
+}
+.landing-block-node-product-blocks-container[data-cols='3'] {
+  --cols: 3;
+}
+.landing-block-node-product-blocks-container[data-cols='4'] {
+  --cols: 4;
+}
+
+.landing-block-node-product-blocks-container[data-gap-hor='0'] {
+  --gap-hor: 0px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='4'] {
+  --gap-hor: 4px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='8'] {
+  --gap-hor: 8px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='12'] {
+  --gap-hor: 12px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='16'] {
+  --gap-hor: 16px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='20'] {
+  --gap-hor: 20px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='24'] {
+  --gap-hor: 24px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='28'] {
+  --gap-hor: 28px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='32'] {
+  --gap-hor: 32px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='36'] {
+  --gap-hor: 36px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='40'] {
+  --gap-hor: 40px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='44'] {
+  --gap-hor: 44px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='48'] {
+  --gap-hor: 48px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='52'] {
+  --gap-hor: 52px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='56'] {
+  --gap-hor: 56px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='60'] {
+  --gap-hor: 60px;
+}
+.landing-block-node-product-blocks-container[data-gap-hor='64'] {
+  --gap-hor: 64px;
+}
+
+.landing-block-node-product-blocks-container[data-gap-ver='0'] {
+  --gap-ver: 0px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='4'] {
+  --gap-ver: 4px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='8'] {
+  --gap-ver: 8px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='12'] {
+  --gap-ver: 12px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='16'] {
+  --gap-ver: 16px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='20'] {
+  --gap-ver: 20px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='24'] {
+  --gap-ver: 24px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='28'] {
+  --gap-ver: 28px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='32'] {
+  --gap-ver: 32px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='36'] {
+  --gap-ver: 36px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='40'] {
+  --gap-ver: 40px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='44'] {
+  --gap-ver: 44px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='48'] {
+  --gap-ver: 48px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='52'] {
+  --gap-ver: 52px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='56'] {
+  --gap-ver: 56px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='60'] {
+  --gap-ver: 60px;
+}
+.landing-block-node-product-blocks-container[data-gap-ver='64'] {
+  --gap-ver: 64px;
+}
+
+/* .landing-block-node-product-block[data-gap-hor='0'] {
+  --gap-hor-card: 0px;
+}
+.landing-block-node-product-block[data-gap-hor='4'] {
+  --gap-hor-card: 4px;
+}
+.landing-block-node-product-block[data-gap-hor='8'] {
+  --gap-hor-card: 8px;
+}
+.landing-block-node-product-block[data-gap-hor='12'] {
+  --gap-hor-card: 12px;
+}
+.landing-block-node-product-block[data-gap-hor='16'] {
+  --gap-hor-card: 16px;
+}
+.landing-block-node-product-block[data-gap-hor='20'] {
+  --gap-hor-card: 20px;
+}
+.landing-block-node-product-block[data-gap-hor='24'] {
+  --gap-hor-card: 24px;
+}
+.landing-block-node-product-block[data-gap-hor='28'] {
+  --gap-hor-card: 28px;
+}
+.landing-block-node-product-block[data-gap-hor='32'] {
+  --gap-hor-card: 32px;
+}
+.landing-block-node-product-block[data-gap-hor='36'] {
+  --gap-hor-card: 36px;
+}
+.landing-block-node-product-block[data-gap-hor='40'] {
+  --gap-hor-card: 40px;
+}
+.landing-block-node-product-block[data-gap-hor='44'] {
+  --gap-hor-card: 44px;
+}
+.landing-block-node-product-block[data-gap-hor='48'] {
+  --gap-hor-card: 48px;
+}
+.landing-block-node-product-block[data-gap-hor='52'] {
+  --gap-hor-card: 52px;
+}
+.landing-block-node-product-block[data-gap-hor='56'] {
+  --gap-hor-card: 56px;
+}
+.landing-block-node-product-block[data-gap-hor='60'] {
+  --gap-hor-card: 60px;
+}
+.landing-block-node-product-block[data-gap-hor='64'] {
+  --gap-hor-card: 64px;
+}
+
+.landing-block-node-product-block[data-gap-ver='0'] {
+  --gap-ver-card: 0px;
+}
+.landing-block-node-product-block[data-gap-ver='4'] {
+  --gap-ver-card: 4px;
+}
+.landing-block-node-product-block[data-gap-ver='8'] {
+  --gap-ver-card: 8px;
+}
+.landing-block-node-product-block[data-gap-ver='12'] {
+  --gap-ver-card: 12px;
+}
+.landing-block-node-product-block[data-gap-ver='16'] {
+  --gap-ver-card: 16px;
+}
+.landing-block-node-product-block[data-gap-ver='20'] {
+  --gap-ver-card: 20px;
+}
+.landing-block-node-product-block[data-gap-ver='24'] {
+  --gap-ver-card: 24px;
+}
+.landing-block-node-product-block[data-gap-ver='28'] {
+  --gap-ver-card: 28px;
+}
+.landing-block-node-product-block[data-gap-ver='32'] {
+  --gap-ver-card: 32px;
+}
+.landing-block-node-product-block[data-gap-ver='36'] {
+  --gap-ver-card: 36px;
+}
+.landing-block-node-product-block[data-gap-ver='40'] {
+  --gap-ver-card: 40px;
+}
+.landing-block-node-product-block[data-gap-ver='44'] {
+  --gap-ver-card: 44px;
+}
+.landing-block-node-product-block[data-gap-ver='48'] {
+  --gap-ver-card: 48px;
+}
+.landing-block-node-product-block[data-gap-ver='52'] {
+  --gap-ver-card: 52px;
+}
+.landing-block-node-product-block[data-gap-ver='56'] {
+  --gap-ver-card: 56px;
+}
+.landing-block-node-product-block[data-gap-ver='60'] {
+  --gap-ver-card: 60px;
+}
+.landing-block-node-product-block[data-gap-ver='64'] {
+  --gap-ver-card: 64px;
+} */
