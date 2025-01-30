@@ -1062,7 +1062,7 @@
                     <div class="landing-block-node-product-block-price-main g-font-size-32 g-font-weight-700 g-line-height-1_2 g-color-black">
                       1 999 ₽
                     </div>
-                    <div class="landing-block-node-product-block-price-discount g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
+                    <div class="landing-block-node-product-block-price-old g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
                       3 999 ₽
                     </div>
                   </div>
@@ -1090,7 +1090,7 @@
                     <div class="landing-block-node-product-block-price-main g-font-size-32 g-font-weight-700 g-line-height-1_2 g-color-black">
                       2 499 ₽
                     </div>
-                    <div class="landing-block-node-product-block-price-discount g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
+                    <div class="landing-block-node-product-block-price-old g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
                       4 999 ₽
                     </div>
                   </div>
@@ -1133,7 +1133,7 @@
                   name: 'Цена',
                   type: 'text',
                 },
-                '.landing-block-node-product-block-price-discount': {
+                '.landing-block-node-product-block-price-old': {
                   name: 'Старая цена',
                   type: 'text',
                 },
@@ -1354,6 +1354,7 @@
                   '.landing-block-node-product-block-title': {
                     name: 'Заголовок',
                     type: [
+                      'typo',
                       'margin-top',
                       'margin-bottom',
                       'margin-left',
@@ -1363,6 +1364,7 @@
                   '.landing-block-node-product-block-text': {
                     name: 'Текст',
                     type: [
+                      'typo',
                       'margin-top',
                       'margin-bottom',
                       'margin-left',
@@ -1381,6 +1383,27 @@
                   '.landing-block-node-product-block-text-sub': {
                     name: 'Текст нижний',
                     type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-price-main': {
+                    name: 'Цена',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-price-old': {
+                    name: 'Старая цена',
+                    type: [
+                      'typo',
                       'margin-top',
                       'margin-bottom',
                       'margin-left',
@@ -1390,10 +1413,7 @@
                   '.landing-block-node-product-block-button': {
                     name: 'Кнопка',
                     type: [
-                      'color',
-                      'font-family',
-                      'font-size',
-                      'font-weight',
+                      'typo-link',
                       'background-color',
                       'border-radius',
                       'padding-top',
@@ -1410,7 +1430,7 @@
               },
               assets: {
                 css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/product-block/style.css',
+                  'https://b24.twinpx.ru/bitrix24-blocks/product-block/style.css?131',
                 ],
               },
             },
