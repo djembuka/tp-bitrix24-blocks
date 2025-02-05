@@ -22,6 +22,7 @@
   a {
   display: block;
   margin-top: var(--gap-ver-card);
+  text-align: center;
 }
 
 @media (min-width: 768px) {

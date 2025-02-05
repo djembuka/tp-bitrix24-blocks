@@ -1439,6 +1439,403 @@
             // console.log('twinpx.blocks', res.data());
           }
         );
+
+        //product-block-no-image
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.productblocknoimage',
+            fields: {
+              NAME: 'Карточка продукта без картинки',
+              DESCRIPTION: 'Карточка продукта без картинки.',
+              SECTIONS: 'Twin px',
+              PREVIEW:
+                'https://b24.twinpx.ru/bitrix24-blocks/product-block-no-image/preview.png',
+              CONTENT: `
+      <section class="twpxProductBlockNoImage landing-block g-pt-30 g-pb-30">
+        <div class="landing-block-node-product-blocks-no-image">
+          <div class="container">
+            <div class="landing-block-node-product-blocks-no-image-container">
+
+              <div class="landing-block-node-product-block-no-image-card">
+                <div class="landing-block-node-product-block-no-image g-pa-30 g-brd-black g-brd-around">
+                  <h2 class="landing-block-node-product-block-no-image-title u-heading-v2__title g-line-height-1_2 g-font-weight-700 g-text-break-word g-font-size-32 g-color-black">
+                    Купите – будет! Не купите – не будет!
+                  </h2>
+                  <div class="landing-block-node-product-block-no-image-text g-font-size-16 g-line-height-1_5 g-color-black">
+                    Вы пока без этого жили? Ну, и как оно? Если честно. Вот и мы говорим – давно пора что-то менять. Этот товар – не просто вещь, это возможность. Возможность почувствовать себя человеком, который умеет делать правильный выбор. А кто не хочет быть таким человеком?
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-text-sub g-font-size-12 g-line-height-1_5 g-color-black">
+                    Мы не настаиваем, но когда все купят, а вам не достанется… Будет неловко. Потому что друзья спросят: «А ты чего без этого?». Придётся оправдываться, рассказывать какие-то сложные истории. А можно просто нажать на кнопку, и вопрос закроется навсегда.
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-price">
+                    <div class="landing-block-node-product-block-no-image-price-main g-font-size-32 g-font-weight-700 g-line-height-1_2 g-color-black">
+                      1 999 ₽
+                    </div>
+                    <div class="landing-block-node-product-block-no-image-price-old g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
+                      3 999 ₽
+                    </div>
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-button-block">
+                    <a href="" class="landing-block-node-product-block-no-image-button g-px-30 g-py-16 g-bg-black g-color-white g-text-underline--none--hover">
+                      Забираю!
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="landing-block-node-product-block-no-image-card">
+                <div class="landing-block-node-product-block-no-image g-pa-30 g-brd-black g-brd-around">
+                  <h2 class="landing-block-node-product-block-no-image-title u-heading-v2__title g-line-height-1_2 g-font-weight-700 g-text-break-word g-font-size-32 g-color-black">
+                    Всё гениальное — дорого. А это… почти гениально.
+                  </h2>
+                  <div class="landing-block-node-product-block-no-image-text g-font-size-16 g-line-height-1_5 g-color-black">
+                    Этот товар не изменит вашу жизнь. Но он изменит полку, на которой будет стоять. Уже неплохо, правда? Представьте, как вы приносите его домой, ставите в центр внимания и испытываете то самое чувство – «Теперь у меня есть это». Это как купить билет на хороший фильм, но без риска разочароваться.
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-text-sub g-font-size-12 g-line-height-1_5 g-color-black">
+                    Вы думаете: «А вдруг не пригодится?» Мы думаем: «А вдруг пригодится!» Кто кого переубедит – увидим на кассе. Но если не купите – будьте готовы всю ночь размышлять: «А вдруг это был тот самый идеальный товар, который мне нужен?» Хотите так рисковать?
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-price">
+                    <div class="landing-block-node-product-block-no-image-price-main g-font-size-32 g-font-weight-700 g-line-height-1_2 g-color-black">
+                      2 499 ₽
+                    </div>
+                    <div class="landing-block-node-product-block-no-image-price-old g-font-size-16 g-font-weight-700 g-line-height-1_2 g-color-black">
+                      4 999 ₽
+                    </div>
+                  </div>
+                  <div class="landing-block-node-product-block-no-image-button-block">
+                    <a href="" class="landing-block-node-product-block-no-image-button g-px-30 g-py-16 g-bg-black g-color-white g-text-underline--none--hover">
+                      Оформите!
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+                      `,
+            },
+            manifest: {
+              block: {
+                name: 'Карточка продукта',
+                section: ['columns'],
+              },
+              nodes: {
+                '.landing-block-node-product-block-no-image-title': {
+                  name: 'Заголовок',
+                  type: 'text',
+                },
+                '.landing-block-node-product-block-no-image-text': {
+                  name: 'Описание',
+                  type: 'text',
+                },
+                '.landing-block-node-product-block-no-image-text-sub': {
+                  name: 'Дополнительное описание',
+                  type: 'text',
+                },
+                '.landing-block-node-product-block-no-image-price-main': {
+                  name: 'Цена',
+                  type: 'text',
+                },
+                '.landing-block-node-product-block-no-image-price-old': {
+                  name: 'Старая цена',
+                  type: 'text',
+                },
+                '.landing-block-node-product-block-no-image-button': {
+                  name: 'Кнопка',
+                  type: 'link',
+                },
+              },
+              cards: {
+                '.landing-block-node-product-block-no-image-card': {
+                  name: 'Карточка продукта',
+                  label: ['.landing-block-node-product-block-no-image-title'],
+                },
+              },
+              style: {
+                block: {
+                  type: ['block-default'],
+                },
+                nodes: {
+                  '.landing-block-node-product-blocks-no-image-container': {
+                    additional: {
+                      name: 'Сетка',
+                      attrs: [
+                        {
+                          name: 'Количество карточек в ряду',
+                          type: 'slider',
+                          attribute: 'data-cols',
+                          items: [
+                            {
+                              name: '1',
+                              value: '1',
+                            },
+                            {
+                              name: '2',
+                              value: '2',
+                            },
+                            {
+                              name: '3',
+                              value: '3',
+                            },
+                            {
+                              name: '4',
+                              value: '4',
+                            },
+                          ],
+                          value: '2',
+                        },
+                        {
+                          name: 'Расстояние по горизонтали',
+                          type: 'slider',
+                          attribute: 'data-gap-hor',
+                          items: [
+                            {
+                              name: '0',
+                              value: '0',
+                            },
+                            {
+                              name: '4',
+                              value: '4',
+                            },
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                            {
+                              name: '36',
+                              value: '36',
+                            },
+                            {
+                              name: '40',
+                              value: '40',
+                            },
+                            {
+                              name: '44',
+                              value: '44',
+                            },
+                            {
+                              name: '48',
+                              value: '48',
+                            },
+                            {
+                              name: '52',
+                              value: '52',
+                            },
+                            {
+                              name: '56',
+                              value: '56',
+                            },
+                            {
+                              name: '60',
+                              value: '60',
+                            },
+                            {
+                              name: '64',
+                              value: '64',
+                            },
+                          ],
+                        },
+                        {
+                          name: 'Расстояние по вертикали',
+                          type: 'slider',
+                          attribute: 'data-gap-ver',
+                          items: [
+                            {
+                              name: '0',
+                              value: '0',
+                            },
+                            {
+                              name: '4',
+                              value: '4',
+                            },
+                            {
+                              name: '8',
+                              value: '8',
+                            },
+                            {
+                              name: '12',
+                              value: '12',
+                            },
+                            {
+                              name: '16',
+                              value: '16',
+                            },
+                            {
+                              name: '20',
+                              value: '20',
+                            },
+                            {
+                              name: '24',
+                              value: '24',
+                            },
+                            {
+                              name: '28',
+                              value: '28',
+                            },
+                            {
+                              name: '32',
+                              value: '32',
+                            },
+                            {
+                              name: '36',
+                              value: '36',
+                            },
+                            {
+                              name: '40',
+                              value: '40',
+                            },
+                            {
+                              name: '44',
+                              value: '44',
+                            },
+                            {
+                              name: '48',
+                              value: '48',
+                            },
+                            {
+                              name: '52',
+                              value: '52',
+                            },
+                            {
+                              name: '56',
+                              value: '56',
+                            },
+                            {
+                              name: '60',
+                              value: '60',
+                            },
+                            {
+                              name: '64',
+                              value: '64',
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  },
+                  '.landing-block-node-product-block-no-image': {
+                    name: 'Карточка продукта',
+                    type: [
+                      'background-color',
+                      'border-color',
+                      'border-width',
+                      'border-radius',
+                      'padding-top',
+                      'padding-bottom',
+                      'padding-left',
+                      'padding-right',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-title': {
+                    name: 'Заголовок',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-text': {
+                    name: 'Текст',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-text-sub': {
+                    name: 'Текст нижний',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-price-main': {
+                    name: 'Цена',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-price-old': {
+                    name: 'Старая цена',
+                    type: [
+                      'typo',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                  '.landing-block-node-product-block-no-image-button': {
+                    name: 'Кнопка',
+                    type: [
+                      'typo-link',
+                      'background-color',
+                      'border-radius',
+                      'padding-top',
+                      'padding-bottom',
+                      'padding-left',
+                      'padding-right',
+                      'margin-top',
+                      'margin-bottom',
+                      'margin-left',
+                      'margin-right',
+                    ],
+                  },
+                },
+              },
+              assets: {
+                css: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/product-block-no-image/style.css?105',
+                ],
+              },
+            },
+          },
+          (res) => {
+            // console.log('twinpx.marquee', res.data());
+          }
+        );
       });
     </script>
   </body>
