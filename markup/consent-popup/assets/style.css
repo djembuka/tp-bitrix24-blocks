@@ -129,6 +129,33 @@
   --width: calc(100% - 80px * 2);
 }
 
+@media (max-width: 1199px) {
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row'],
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row-reverse'],
+  .twpxConsentPopup.landing-block-node-consent-popup:not([data-direction]) {
+    display: block;
+  }
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row']
+    .landing-block-node-consent-popup-text-block,
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row-reverse']
+    .landing-block-node-consent-popup-text-block,
+  .twpxConsentPopup.landing-block-node-consent-popup:not([data-direction])
+    .landing-block-node-consent-popup-text-block {
+    margin-bottom: 32px;
+  }
+
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row']
+    .landing-block-node-consent-popup-button,
+  .twpxConsentPopup.landing-block-node-consent-popup[data-direction='row-reverse']
+    .landing-block-node-consent-popup-button,
+  .twpxConsentPopup.landing-block-node-consent-popup:not([data-direction])
+    .landing-block-node-consent-popup-button {
+    display: block;
+    text-align: center;
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 767px) {
   .twpxConsentPopup.landing-block-node-consent-popup {
     --width: calc(100% - 15px * 2);
@@ -148,78 +175,5 @@
     display: block;
     text-align: center;
     width: 100% !important;
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='1'] {
-    top: 80px;
-    bottom: auto;
-    left: 80px;
-    right: auto;
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='2'] {
-    top: 80px;
-    bottom: auto;
-    left: 50%;
-    right: auto;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='3'] {
-    top: 80px;
-    bottom: auto;
-    left: auto;
-    right: 80px;
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='4'] {
-    top: 50%;
-    bottom: auto;
-    left: 80px;
-    right: auto;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='5'] {
-    top: 50%;
-    bottom: auto;
-    left: 50%;
-    right: auto;
-    -webkit-transform: translate(-50%);
-    transform: translate(-50%);
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='6'] {
-    top: 50%;
-    bottom: auto;
-    left: auto;
-    right: 80px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='7'] {
-    top: auto;
-    bottom: 80px;
-    left: 80px;
-    right: auto;
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='8'] {
-    top: auto;
-    bottom: 80px;
-    left: 50%;
-    right: auto;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .twpxConsentPopup[data-fixed-button-position='9'] {
-    top: auto;
-    bottom: 80px;
-    left: auto;
-    right: 80px;
   }
 }
