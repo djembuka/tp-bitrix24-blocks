@@ -27,10 +27,6 @@
   --color: #fff;
   --border-color: transparent;
 }
-.landing-block-node-tags-item-link[href='#'] {
-  cursor: default;
-  pointer-events: none;
-}
 .landing-block-node-tags-item-link[class*='g-border-color'] {
   border-style: solid;
 }
