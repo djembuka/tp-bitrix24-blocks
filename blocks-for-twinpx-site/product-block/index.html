@@ -27,7 +27,7 @@
           {
             code: 'twinpx.productblock',
             fields: {
-              NAME: 'Карточка продукта (1.1.41)',
+              NAME: 'Карточка продукта (1.1.44)',
               DESCRIPTION: 'Карточка продукта.',
               SECTIONS: 'Twin px',
               PREVIEW:
@@ -39,7 +39,7 @@
             <div class="landing-block-node-product-blocks-container">
 
               <div class="landing-block-node-product-block-card">
-                <div class="landing-block-node-product-block g-pa-30 g-brd-black g-brd-around">
+                <div class="landing-block-node-product-block g-pa-30 g-brd-black g-brd-around" data-img-align="right">
                   <h2 class="landing-block-node-product-block-title u-heading-v2__title g-line-height-1_2 g-font-weight-700 g-text-break-word g-font-size-32 g-color-black">
                     Купите – будет! Не купите – не будет!
                   </h2>
@@ -343,6 +343,24 @@
                       'margin-left',
                       'margin-right',
                     ],
+                    additional: {
+                      name: 'Расположение изображения',
+                      attrs: [
+                        {
+                          name: 'Расположение изображения',
+                          type: 'dropdown',
+                          attribute: 'data-img-align',
+                          items: {
+                            right: 'Справа',
+                            left: 'Слева',
+                            top: 'Над заголовком',
+                            bottom: 'Под заголовком',
+                            no: 'Без изображения',
+                          },
+                          value: 'right',
+                        },
+                      ],
+                    },
                   },
                   '.landing-block-node-product-block-title': {
                     name: 'Заголовок',
@@ -423,7 +441,7 @@
               },
               assets: {
                 css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/product-block/style.css?1141',
+                  'https://b24.twinpx.ru/bitrix24-blocks/product-block/style.css?1144',
                 ],
               },
             },
