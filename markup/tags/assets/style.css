@@ -31,6 +31,10 @@
   cursor: default;
   pointer-events: none;
 }
+[id^='block'] .landing-block-node-tags-item-link[href='#'] {
+  cursor: pointer;
+  pointer-events: auto;
+}
 .landing-block-node-tags-item-link[class*='g-border-color'] {
   border-style: solid;
 }

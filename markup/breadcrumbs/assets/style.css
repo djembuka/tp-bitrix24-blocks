@@ -32,10 +32,20 @@ a.landing-block-node-breadcrumbs-item-link {
 a.landing-block-node-breadcrumbs-item-link:hover {
   color: var(--color-hover);
 }
+a.landing-block-node-breadcrumbs-item-link[href='#'] {
+  cursor: default;
+  pointer-events: none;
+}
+[id^='block'] a.landing-block-node-breadcrumbs-item-link[href='#'] {
+  cursor: pointer;
+  pointer-events: auto;
+}
 
 @media (max-width: 991px) {
   .landing-block-node-breadcrumbs-container {
     flex-wrap: nowrap;
     overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0 0% 50%);
   }
 }
