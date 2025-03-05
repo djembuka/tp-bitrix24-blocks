@@ -1,6 +1,4 @@
 .landing-block-node-breadcrumbs-container {
-  --color: #000;
-  --color-hover: #000;
   --gap-hor: 8px;
   --gap-ver: 8px;
   display: flex;
@@ -14,19 +12,21 @@
   flex-wrap: nowrap;
   gap: var(--gap-hor);
 }
-.landing-block-node-breadcrumbs-item:after {
-  content: '/';
+.landing-block-node-breadcrumbs-item span {
+  --color: #000;
   display: block;
   color: var(--color);
   pointer-events: none;
 }
-.landing-block-node-breadcrumbs-item:last-child:after {
+.landing-block-node-breadcrumbs-item:last-child span {
   display: none;
 }
 .landing-block-node-breadcrumbs-item-link {
   white-space: nowrap;
 }
 a.landing-block-node-breadcrumbs-item-link {
+  --color: #000;
+  --color-hover: #000;
   color: var(--color);
 }
 a.landing-block-node-breadcrumbs-item-link:hover {

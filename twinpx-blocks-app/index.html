@@ -9,30 +9,6 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <!--<div class="twpx-application">
-      <img
-        src="https://b24.twinpx.ru/bitrix24-blocks/twinpx-blocks-logo.svg"
-        width="158"
-        height="158"
-        alt=""
-        class="twpx-logo"
-      />
-      <div class="twpx-version">Версия 2</div>
-      <div class="twpx-heading">Блоки для сайтов от Twin px</div>
-      <div class="twpx-text">
-        <p>
-          Приложение «Блоки для сайтов от Twin px» предлагает уникальные и
-          полезные элементы для вашего сайта.
-        </p>
-        <p>
-          Используйте его, чтобы добавить такие блоки, как всплывающая кнопка,
-          бегущая строка, всплывающее окно пользовательского соглашения, облако
-          тегов и блок с социальными аккаунтами, где вы можете настроить иконки
-          и ссылки самостоятельно для каждого аккаунта.
-        </p>
-      </div>
-    </div>-->
-
     <iframe
       src="https://2px.ru/blocksb24/"
       width="100%"
@@ -1852,6 +1828,85 @@
           },
           (res) => {
             // console.log('twinpx.marquee', res.data());
+          }
+        );
+
+        //breadcrumbs
+        BX24.callMethod(
+          'landing.repo.register',
+          {
+            code: 'twinpx.breadcrumbs',
+            fields: {
+              NAME: 'Хлебные крошки',
+              DESCRIPTION: 'Навигация по сайту хлебные крошки',
+              SECTIONS: 'Twin px',
+              PREVIEW:
+                'https://b24.twinpx.ru/bitrix24-blocks/breadcrumbs/preview.png',
+              CONTENT: `
+                <div class="twpxBreadcrumbs landing-block g-pt-30 g-pb-30">
+                  <div class="landing-block-node-breadcrumbs">
+                    <div class="container">
+                      <div class="landing-block-node-breadcrumbs-container g-color-black g-font-size-14 g-font-open-sans">
+                        <span class="landing-block-node-card landing-block-node-breadcrumbs-item">
+                          <a href="" class="g-text-underline--none--hover landing-block-node-breadcrumbs-item-link landing-block-node-card-container">Главная</a>
+                          <span>/</span>
+                        </span>
+                        <span class="landing-block-node-card landing-block-node-breadcrumbs-item">
+                          <a href="" class=" g-text-underline--none--hover landing-block-node-breadcrumbs-item-link landing-block-node-card-container">Сюда занесло случайно</a>
+                          <span>/</span>
+                        </span>
+                        <span class="landing-block-node-card landing-block-node-breadcrumbs-item">
+                          <a href="" class=" g-text-underline--none--hover landing-block-node-breadcrumbs-item-link landing-block-node-card-container">Но уже интересно…</a>
+                          <span>/</span>
+                        </span>
+                        <span class="landing-block-node-card landing-block-node-breadcrumbs-item">
+                          <a href="" class=" g-text-underline--none--hover landing-block-node-breadcrumbs-item-link landing-block-node-card-container">Ну теперь оставайтесь!</a>
+                          <span>/</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>`,
+            },
+            manifest: {
+              block: {
+                name: 'Хлебные крошки',
+                section: ['tiles', 'menu'],
+              },
+              nodes: {
+                '.landing-block-node-card-container': {
+                  name: 'Ссылка',
+                  type: 'link',
+                },
+              },
+              cards: {
+                '.landing-block-node-card': {
+                  name: 'Карточка ссылки',
+                  label: ['.landing-block-node-card-container'],
+                },
+              },
+              style: {
+                block: 'block-default',
+                nodes: {
+                  '.landing-block-node-breadcrumbs-item-link': {
+                    name: 'Ссылка',
+                    type: ['typo-link'],
+                  },
+                  '.landing-block-node-breadcrumbs-item span': {
+                    name: 'Разделитель',
+                    type: ['color', 'font-size', 'font-weight'],
+                  },
+                },
+              },
+              assets: {
+                css: [
+                  'https://b24.twinpx.ru/bitrix24-blocks/breadcrumbs/style.css?105',
+                ],
+              },
+            },
+          },
+          (res) => {
+            // console.log('twinpx.breadcrumbs', res.data());
           }
         );
       });
