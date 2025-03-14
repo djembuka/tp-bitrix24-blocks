@@ -2,7 +2,7 @@
   --gap: 64px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gap);
+  gap: 32px;
 }
 .twpxTextTwoColumns .landing-block-node-text-two-columns-left {
 }
@@ -14,10 +14,16 @@
   display: block;
   text-align: center;
 }
+.twpxTextTwoColumns
+  .landing-block-node-text-two-columns-right-button
+  a[href='#'] {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .twpxTextTwoColumns .landing-block-node-text-two-columns {
     grid-template-columns: var(--left-ratio) var(--right-ratio);
+    gap: var(--gap);
   }
   .twpxTextTwoColumns .landing-block-node-text-two-columns-right-button a {
     display: inline-block;

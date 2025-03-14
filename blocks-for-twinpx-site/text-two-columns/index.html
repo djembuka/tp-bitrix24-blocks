@@ -27,7 +27,7 @@
           {
             code: 'twinpx.texttwocolumns',
             fields: {
-              NAME: 'Текст в две колонки с кнопкой (1.0.1)',
+              NAME: 'Текст в две колонки с кнопкой (1.0.7)',
               DESCRIPTION: 'Текст в две колонки с кнопкой.',
               SECTIONS: 'Twin px',
               PREVIEW:
@@ -186,7 +186,7 @@
                     },
                   },
                   '.landing-block-node-text-two-columns-left': {
-                    name: 'Текст слева',
+                    name: 'Колонка и текст слева',
                     type: [
                       'typo',
                       'padding-top',
@@ -196,14 +196,17 @@
                     ],
                   },
                   '.landing-block-node-text-two-columns-right': {
-                    name: 'Текст справа',
+                    name: 'Колонка справа',
                     type: [
-                      'typo',
                       'padding-top',
                       'padding-bottom',
                       'padding-left',
                       'padding-right',
                     ],
+                  },
+                  '.landing-block-node-text-two-columns-right-text': {
+                    name: 'Текст справа',
+                    type: ['typo'],
                   },
                   '.landing-block-node-text-two-columns-right-button a': {
                     name: 'Кнопка',
@@ -221,11 +224,15 @@
                       'margin-right',
                     ],
                   },
+                  '.landing-block-node-text-two-columns-right-button': {
+                    name: 'Выравнивание кнопки',
+                    type: ['text-align'],
+                  },
                 },
               },
               assets: {
                 css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/text-two-columns/style.css?1.0.1',
+                  'https://b24.twinpx.ru/bitrix24-blocks/text-two-columns/style.css?1.0.7',
                 ],
               },
             },
