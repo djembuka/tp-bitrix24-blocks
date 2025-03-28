@@ -17,6 +17,7 @@
   transform: translateY(50px);
   -webkit-transition: transform 0.5s ease;
   transition: transform 0.5s ease;
+  pointer-events: none;
   z-index: 1000;
 }
 [id^='block'] .landing-block-node-consent-popup {
@@ -36,6 +37,7 @@
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
+  pointer-events: auto;
   z-index: 10000;
 }
 .landing-block-node-consent-popup--hide {
