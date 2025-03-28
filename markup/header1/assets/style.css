@@ -1,4 +1,5 @@
 .twpxHeader1 {
+  --bg: #fff;
   z-index: 150 !important;
 }
 .twpxHeader1 .navbar .container {
@@ -29,7 +30,8 @@
   cursor: pointer;
   flex-shrink: 0;
 }
-.twpxHeader1Sandwich:before {
+.twpxHeader1Sandwich::before,
+.twpxHeader1Sandwich span:first-of-type {
   content: '';
   position: absolute;
   top: calc(50% - 7px);
@@ -42,7 +44,8 @@
   transition: all 0.3s ease;
   z-index: 10;
 }
-.twpxHeader1Sandwich:after {
+.twpxHeader1Sandwich:after,
+.twpxHeader1Sandwich span:last-of-type {
   content: '';
   position: absolute;
   top: calc(50% + 4px);
@@ -73,6 +76,7 @@
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   display: none !important;
+  background-color: var(--bg);
 }
 .twpxHeader1Slidemenu.landing-block-node-slidemenu--block {
   display: flex !important;
