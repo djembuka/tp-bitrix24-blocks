@@ -27,14 +27,14 @@
           {
             code: 'twinpx.headerlight115',
             fields: {
-              NAME: 'Светлая шапка (1.1.5)',
+              NAME: 'Шапка Twin px (1.1.16)',
               DESCRIPTION:
                 'Шапка с логотипом, меню, выплывающей плашкой и мобильной версией.',
               SECTIONS: 'Twin px',
               PREVIEW:
                 'https://b24.twinpx.ru/bitrix24-blocks/header-light/preview.png',
               CONTENT: `
-                      <header class="twpxHeader1 landing-block g-bg-white u-header">
+      <header class="twpxHeader1 landing-block g-bg-white u-header">
         <nav class="navbar navbar-expand-lg g-pa-0">
           <div class="container g-height-100">
             <a href="" class="navbar-brand landing-block-node-menu-logo-link u-header__logo">
@@ -66,7 +66,7 @@
           </div>
         </nav>
         <div class="g-pos-rel">
-          <div class="twpxHeader1Slidemenu landing-block-node-slidemenu g-bg-white g-pos-abs g-top-0 g-left-0 g-width-100x d-flex justify-content-center align-items-center opacity-0 g-z-index-minus-1">
+          <div class="twpxHeader1Slidemenu landing-block-node-slidemenu g-pos-abs g-top-0 g-left-0 g-width-100x d-flex justify-content-center align-items-center opacity-0 g-z-index-minus-1">
             <span class="landing-block-node-slidemenu-list g-px-10">
               <span class="landing-block-node-slidemenu-list-item d-block g-mb-14">
                 <a href="" class="landing-block-node-slidemenu-list-item-link g-color-black g-font-size-33 g-font-open-sans g-text-decoration-none g-text-decoration-none--hover g-color-primary--hover">Новости</a>
@@ -88,7 +88,7 @@
             },
             manifest: {
               block: {
-                name: 'Светлая шапка (1.1.5)',
+                name: 'Шапка Twin px',
                 section: ['menu'],
               },
               nodes: {
@@ -157,6 +157,10 @@
                     name: 'Телефон',
                     type: ['typo-link'],
                   },
+                  '.twpxHeader1Sandwich': {
+                    name: 'Иконка меню',
+                    type: ['color', 'color-hover'],
+                  },
                   '.landing-block-node-slidemenu-list-item-link': {
                     name: 'Ссылка пункта выплывающего меню',
                     type: ['typo-link'],
@@ -165,7 +169,7 @@
               },
               assets: {
                 css: [
-                  'https://b24.twinpx.ru/bitrix24-blocks/header-light/style.css',
+                  'https://b24.twinpx.ru/bitrix24-blocks/header-light/style.css?116',
                 ],
                 js: [
                   'https://b24.twinpx.ru/bitrix24-blocks/header-light/script.js',

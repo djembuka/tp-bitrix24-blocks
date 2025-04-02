@@ -23,15 +23,17 @@
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
+
 .twpxHeader1Sandwich {
+  --color: #000;
+  --color-hover: #000;
   position: relative;
   width: 30px;
   height: 30px;
   cursor: pointer;
   flex-shrink: 0;
 }
-.twpxHeader1Sandwich::before,
-.twpxHeader1Sandwich span:first-of-type {
+.twpxHeader1Sandwich::before {
   content: '';
   position: absolute;
   top: calc(50% - 7px);
@@ -39,13 +41,12 @@
   width: 30px;
   height: 3px;
   border-radius: 2px;
-  background-color: #000;
+  background-color: var(--color);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 10;
 }
-.twpxHeader1Sandwich:after,
-.twpxHeader1Sandwich span:last-of-type {
+.twpxHeader1Sandwich:after {
   content: '';
   position: absolute;
   top: calc(50% + 4px);
@@ -53,10 +54,14 @@
   width: 15px;
   height: 3px;
   border-radius: 2px;
-  background-color: #000;
+  background-color: var(--color);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 10;
+}
+.twpxHeader1Sandwich:hover:before,
+.twpxHeader1Sandwich:hover:after {
+  background-color: var(--color-hover);
 }
 .twpxHeader1Sandwich:hover:after {
   width: 30px;
