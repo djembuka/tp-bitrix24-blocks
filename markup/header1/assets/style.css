@@ -2,8 +2,11 @@
   --bg: #fff;
   z-index: 150 !important;
 }
-.twpxHeader1 .navbar .container {
+.twpxHeader1 .container {
   min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .twpxHeader1Menu {
   -webkit-transition: opacity 0.3s ease;
@@ -164,6 +167,21 @@
   width: 32px;
   height: 32px;
 }
+.twpxHeader1 .landing-block-node-phone {
+  margin-right: 30px !important;
+}
+.twpxHeader1 .landing-block-node-phone-mobile {
+  --color: #000;
+  --color-hover: #000;
+}
+.twpxHeader1 .landing-block-node-phone-mobile svg path {
+  fill: var(--color);
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+.twpxHeader1 .landing-block-node-phone-mobile svg:hover path {
+  fill: var(--color-hover);
+}
 
 @media (max-width: 991px) {
   .twpxHeader1Menu {
@@ -172,12 +190,9 @@
   .twpxHeader1 .landing-block-node-phone-desktop {
     display: none;
   }
-  .twpxHeader1 .navbar-expand-lg > .container,
-  .twpxHeader1 .navbar-expand-lg > .container-fluid {
+  .twpxHeader1 .container,
+  .twpxHeader1 .container-fluid {
     justify-content: space-between !important;
-  }
-  .twpxHeader1 .landing-block-node-phone {
-    margin-right: 30px !important;
   }
   .twpxHeader1 .landing-block-node-phone-mobile {
     display: block;
