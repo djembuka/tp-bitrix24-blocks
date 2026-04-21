@@ -20,7 +20,11 @@
         (this.selector = e.selector),
         (this.speed = t.dataset.speed || 0.25),
         (this.pausable = t.dataset.pausable),
-        (this.reverse = t.dataset.reverse),
+
+// ! changes !
+        (this.reverse = t.dataset.reverse === '1' ? true : false),
+// ! _changes_ !
+
         (this.paused = !1),
         (this.parent = t.parentElement),
         (this.parentProps = this.parent.getBoundingClientRect()),
